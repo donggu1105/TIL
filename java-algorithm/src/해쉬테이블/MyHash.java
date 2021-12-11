@@ -40,6 +40,14 @@ public class MyHash {
             return null;
         }
     }
+
+    /*
+    * 해쉬 충돌을 막기위한 2가지 기법
+    * 1. Chaning 기법 - 저장공간이 채워져있으면 , 링크드리스트로 연결
+    * 2. Linear Probing 기법 - 폐쇄 해싱 , 저장공간이 있으면 다음 빈공간을 찾아서 넣어줌
+    * */
+
+
 }
 
 
