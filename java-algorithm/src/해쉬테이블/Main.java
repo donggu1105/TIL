@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        MyChaningHash mainObject = new MyChaningHash(20);
+        MyLinearProbingHash mainObject = new MyLinearProbingHash(20);
 
         mainObject.saveData("KDH", "1");
         mainObject.saveData("KYS", "12323");
