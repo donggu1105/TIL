@@ -17,6 +17,7 @@ public class Main {
         myTree.insertNode(7);
         myTree.insertNode(8);
         myTree.insertNode(6);
+
         System.out.println(myTree.delete(15));
         System.out.println("HEAD: " + myTree.head.value);
         System.out.println("HEAD LEFT: " + myTree.head.left.value);
