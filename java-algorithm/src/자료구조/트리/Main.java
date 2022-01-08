@@ -24,6 +24,7 @@ public class Main {
         System.out.println("HEAD LEFT LEFT: " + myTree.head.left.left.value);
         System.out.println("HEAD LEFT RIGHT: " + myTree.head.left.right.value);
 
+
         System.out.println("HEAD RIGHT: " + myTree.head.right.value);
         System.out.println("HEAD RIGHT LEFT: " + myTree.head.right.left.value);
         System.out.println("HEAD RIGHT RIGHT: " + myTree.head.right.right.value);
