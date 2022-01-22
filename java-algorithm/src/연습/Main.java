@@ -1,7 +1,6 @@
-package 연습.기본정렬알고리즘;
+package 연습;
 
-import 연습.기본정렬알고리즘.삽입정렬.InsertionSort1;
-import 연습.기본정렬알고리즘.선택정렬.SelectionSort2;
+import 연습.삽입정렬.InsertionSort1;
 
 import java.util.ArrayList;
 

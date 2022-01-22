@@ -1,9 +1,9 @@
-package 연습.기본정렬알고리즘.버블정렬;
+package 연습.버블정렬;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class BubbleSort1 {
+public class BubbleSort2 {
 
     public static ArrayList<Integer> sort(ArrayList<Integer> dataList) {
 
@@ -12,12 +12,7 @@ public class BubbleSort1 {
 
             for (int index2 = 0; index2 < dataList.size() - 1 - index; index2++) {
                 if (dataList.get(index2) > dataList.get(index2 + 1)) {
-                    Collections.swap(dataList, index2, index2 + 1);
-                    swap = true;
-                }
-
-                if (swap) {
-                    break;
+                    Collections.swap(dataList, index2, index2+1);
                 }
             }
         }

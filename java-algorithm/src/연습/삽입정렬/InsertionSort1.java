@@ -1,4 +1,4 @@
-package 연습.기본정렬알고리즘.삽입정렬;
+package 연습.삽입정렬;
 
 import java.util.ArrayList;
 import java.util.Collections;
