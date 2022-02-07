@@ -1,0 +1,39 @@
+{
+  "name": "stick man  #14",
+  "description": "stick figure",
+  "image": "ipfs://NewUriToReplace/14.png",
+  "dna": "d39309820769dea5b60635088b81f5de306fc7b9",
+  "edition": 14,
+  "date": 1644123646629,
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "red"
+    },
+    {
+      "trait_type": "Arm",
+      "value": "Arm"
+    },
+    {
+      "trait_type": "Body",
+      "value": "Body"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "eyes"
+    },
+    {
+      "trait_type": "Feet",
+      "value": "feet1"
+    },
+    {
+      "trait_type": "Mouth",
+      "value": "mouth5"
+    },
+    {
+      "trait_type": "Nose",
+      "value": "nose4"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}
