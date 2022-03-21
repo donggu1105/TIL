@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6b0f579c-1894-485e-9a8f-665ba274dd43" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/35.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/37.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/39.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/41.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/43.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/44.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/45.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/46.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/47.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/49.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/images/9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/10.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/11.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/12.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/13.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/14.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/15.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/16.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/17.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/18.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/19.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/20.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/21.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/22.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/23.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/24.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/25.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/26.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/27.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/28.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/29.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/30.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/31.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/32.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/33.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/34.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/35.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/36.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/37.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/38.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/39.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/40.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/41.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/42.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/43.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/44.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/45.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/46.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/47.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/48.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/49.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/50.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bulk-upload-to-opensea-main/src/json/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-algorithm/project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../java-algorithm/project.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="24ifbxM40EkRMZF8yXkhA7O6qg4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/layers" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6b0f579c-1894-485e-9a8f-665ba274dd43" name="Changes" comment="" />
+      <created>1644118403814</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1644118403814</updated>
+      <workItem from="1644118404621" duration="422000" />
+      <workItem from="1644118831594" duration="268000" />
+      <workItem from="1644119115085" duration="2419000" />
+      <workItem from="1644121869262" duration="519000" />
+      <workItem from="1644122431125" duration="784000" />
+      <workItem from="1644123408687" duration="1000" />
+      <workItem from="1644123423098" duration="821000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
