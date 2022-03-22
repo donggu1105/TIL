@@ -1,6 +1,8 @@
 package 알고리즘.그래프.크루스칼알고리즘;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 
 public class Edge implements Comparable<Edge>{
 
@@ -29,7 +31,7 @@ public class Edge implements Comparable<Edge>{
     }
 
     public static void main(String[] args) {
-
+        ArrayList<String> vetices = new ArrayList<String>(Arrays.asList("A", "B", "C", "D", "E", "F", "G"));
         ArrayList<Edge> myedges = new ArrayList<Edge>();
         myedges.add(new Edge(7, "A", "B"));
         myedges.add(new Edge(5, "A", "D"));
@@ -43,5 +45,12 @@ public class Edge implements Comparable<Edge>{
         myedges.add(new Edge(9, "E", "G"));
         myedges.add(new Edge(11, "F", "G"));
 
+//        System.out.println(vetices);
+//        System.out.println(myedges);
+
+
+
+
     }
+
 }
