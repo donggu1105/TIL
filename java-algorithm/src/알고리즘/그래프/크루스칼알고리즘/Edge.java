@@ -114,6 +114,7 @@ public class Edge implements Comparable<Edge>{
                 mst.add(currentEdge);
             }
         }
+        return mst;
     }
 
 }
