@@ -1,60 +1,78 @@
-package 알고리즘.이분탐색.먹을것인가먹힐것인가;
+package 알고리즘.이분탐색.두용액;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.StringTokenizer;
 
 public class Main {
     static FastReader scan = new FastReader();
     static StringBuilder sb = new StringBuilder();
 
-    static int T, N, M;
-
+    static int N;
     static int[] A;
-    static int[] B;
 
     static void input() {
 
-        T = scan.nextInt();
         N = scan.nextInt();
-        M = scan.nextInt();
 
-        A = new int[N+1];
-        B = new int[M+1];
+        A = new int[N + 1];
 
         for (int i = 1; i <= N; i++) A[i] = scan.nextInt();
-        for (int i = 1; i <= M; i++) B[i] = scan.nextInt();
+
     }
 
     static int lower_bound(int[] A, int L, int R, int X) {
-        // A[L...R]에서 X 미만의 수 (X보다 작은 수) 중 제일 오른쪽 인덱스를 return 하는 함수
-        // 그런게 없다면 L - 1을 return 한다.
-        int result = L - 1;
+        // A[L....R] 에서 X 이상의 수 중 제일 왼쪽 인덱스를 return 하는 함수
+        // 그런 게 없다면 R + 1 을 return 한다.
+        int res = R + 1;
+
         while (L <= R) {
             int mid = (L + R) / 2;
-            if (A[mid] < X) {
-                result = mid;
-                L = mid + 1;
-            } else if (A[mid] >= X) {
-                // 오른쪽 구간은 이미 다 크니까 덍겨온다.
+
+            if (A[mid] >= X) { // 원하는 구간
+                res = mid;
+                // 오른쪾 날리기
                 R = mid - 1;
+            } else {
+                L = mid + 1;
             }
         }
-        return result;
+        return res;
+
     }
+
     static void pro() {
-        // B 배열에 대해 이분탐색을 하예정이니까 , 정렬을 해주자
-        // TODO: b 정렬
-        Arrays.sort(B, 1, M +1);
+        // 만 곱하기 만은 1억
+        // A에 대해 이분탐색을 할 예정이니까, 정렬을 미리 해주자
+        Arrays.sort(A, 1, N + 1);
+        int best_sum = Integer.MAX_VALUE;
+        int v1 = 0, v2 = 0;
 
-        int ans = 0;
+        for (int left = 1; left <= N - 1; left++) {
+            // A[left] 용액을 쓸 것이다. 고로 -A[left]와 가장 가까운 용액을 자신의 오른쪽 구간에서 찾자.
+            int res = lower_bound(A, left + 1, N, -A[left]);
 
-        for (int i = 1; i <= N; i++) {
-            // A[i] 를 선택했을떄, B에서는 A[i]보다 작은게 몇개나 있는지 count 하기
-            ans += lower_bound(B, 1, M, A[i]);
+            // A[res - 1] 와 A[res] 중에 A[left]와 섞었을때 의 정보를 정답에 갱신시킨다.
+
+            if (left + 1 <= res - 1 && res - 1 <= N && Math.abs(A[res - 1] + A[left]) < best_sum) {
+                best_sum = Math.abs(A[left] + A[res - 1]);
+                v1 = A[left];
+                v2 = A[res - 1];
+
+            }
+
+            if (left + 1 <= res && res <= N && Math.abs(A[res - 1] + A[left]) < best_sum) {
+                best_sum = Math.abs(A[left] + A[res - 1]);
+                v1 = A[left];
+                v2 = A[res];
+
+            }
         }
+
+        sb.append(v1).append(' ').append(v2);
+        System.out.println(sb);
+
+
 
         System.out.println(ans);
 
