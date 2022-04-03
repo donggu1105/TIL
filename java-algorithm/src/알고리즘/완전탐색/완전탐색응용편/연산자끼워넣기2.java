@@ -1,9 +1,7 @@
-package 알고리즘.완전탐색응용편;
+package 알고리즘.완전탐색.완전탐색응용편;
 import java.io.*;
 import java.util.*;
 
-
-import 알고리즘.완전탐색.완전탐색1;
 public class 연산자끼워넣기2 {
     static FastReader scan = new FastReader();
     static StringBuilder sb = new StringBuilder();

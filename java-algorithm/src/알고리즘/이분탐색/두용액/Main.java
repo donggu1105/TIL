@@ -72,13 +72,6 @@ public class Main {
         sb.append(v1).append(' ').append(v2);
         System.out.println(sb);
 
-
-
-        System.out.println(ans);
-
-
-
-
     }
 
     public static void main(String[] args) {

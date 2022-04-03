@@ -1,7 +1,5 @@
-package 알고리즘.완전탐색응용편;
+package 알고리즘.완전탐색.완전탐색응용편;
 
-
-import 알고리즘.완전탐색.완전탐색1;
 
 import java.io.*;
 import java.util.StringTokenizer;
