@@ -1,4 +1,4 @@
-package 알고리즘.완전탐색.완전탐색응용편;
+package 알고리즘.완전탐색;
 
 
 import java.io.*;
