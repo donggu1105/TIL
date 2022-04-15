@@ -1,12 +1,17 @@
 package com.example.security1.controller;
 
+import com.example.security1.config.auth.PrincipalDetails;
 import com.example.security1.model.User;
 import com.example.security1.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +24,40 @@ public class IndexController {
     private final UserRepository userRepository;
 
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    @GetMapping("/test/login")
+    public @ResponseBody String testLogin(Authentication authentication, @AuthenticationPrincipal PrincipalDetails userDetails) {
+        // DI(의존성 주입) @AuthenticationPrincipal 이거쓰면 UserDetails를 받을수있게해줌 , 세션정보를 가져올수있게 해줌
+        System.out.println("/test/login ===========");
+        PrincipalDetails principalDetails = (PrincipalDetails) authentication.getPrincipal();
+        System.out.println("authentication : " + principalDetails.getUsername());
+
+        System.out.println("userDetails :" + userDetails.getUser());
+        return "세션 정보 확인하기";
+    }
+
+    /**
+     * 스프링 시큐리티 - 자기만의 시큐리티 세션을 가지고 있음
+     * 서버가 관리하는 세션안에 시큐리티 세션이 있음 - 이 세션은 Authentication 객체 밖에 없음
+     *
+     * 근데 Authentication 은 2가지 종류가 있어
+     * 1. UserDetails : 일반적인 로그인
+     * 2. OAuth2User : OAuth 로그인
+     *
+     * -> 두개라서 번거로워 세션처리할때 -> 두개를 부모로 두는 특정한 클래스를 만들자. 그냥 그 클래스를 Authentication에 담자
+     * */
+
+    @GetMapping("/test/oauth/login")
+    public @ResponseBody String testOAuthLogin(Authentication authentication, @AuthenticationPrincipal OAuth2User oAuth) {
+        // DI(의존성 주입) @AuthenticationPrincipal 이거쓰면 UserDetails를 받을수있게해줌 , 세션정보를 가져올수있게 해줌
+        System.out.println("/test/oauth/login ===========");
+        OAuth2User oAuth2User = (OAuth2User) authentication.getPrincipal();
+        System.out.println("authentication : " + oAuth2User.getAttributes());
+
+        System.out.println("oauth2User:"+oAuth.getAttributes());
+
+        return "oauth 세션 정보 확인하기";
+    }
 
     @GetMapping({"", "/" })
     public String index() {
