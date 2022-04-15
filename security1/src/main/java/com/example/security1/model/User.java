@@ -21,6 +21,7 @@ public class User {
     private String password;
     private String email;
     private String role;
+
     @CreationTimestamp
     private Timestamp createDate;
 }

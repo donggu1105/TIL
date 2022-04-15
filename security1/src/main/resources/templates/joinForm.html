@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입 페이지</title>
+</head>
+<body>
+<h1>회원가입 페이지</h1>
+<hr>
+<!-- 시큐리티는 x-www-form-url-encoded 타입만 인식 -->
+<form action="/join" method="post">
+    <input type="text" name="userName" /><br>
+    <input type="password" name="password" /><br>
+    <input type="text" name="email"/><br>
+    <button>회원가입</button>
+</form>
+
+
+</body>
+</html>
