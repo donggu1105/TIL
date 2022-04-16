@@ -1,9 +1,13 @@
 package com.example.security1.config.oauth;
 
 import com.example.security1.config.auth.PrincipalDetails;
+import com.example.security1.config.oauth.provider.FacebookUserInfo;
+import com.example.security1.config.oauth.provider.GoogleUserInfo;
+import com.example.security1.config.oauth.provider.OAuth2UserInfo;
 import com.example.security1.model.User;
 import com.example.security1.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
@@ -15,8 +19,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 
-//    private final BCryptPasswordEncoder bCryptPasswordEncoder;
-
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     private final UserRepository userRepository;
 
@@ -33,12 +36,24 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
         OAuth2User oauth2User = super.loadUser(userRequest);
         System.out.println("oauth2User:" + oauth2User.getAttributes());
 
-        String provider = userRequest.getClientRegistration().getClientId(); // google
-        String providerId = oauth2User.getAttribute("sub");
-        String email = oauth2User.getAttribute("email");
+        String provider = userRequest.getClientRegistration().getRegistrationId(); // google
+
+        OAuth2UserInfo oAuth2UserInfo = null;
+        if (provider.equals("google")) {
+            // google
+            System.out.println("구글 로그인 요청");
+            oAuth2UserInfo = new GoogleUserInfo(oauth2User.getAttributes());
+        } else if (provider.equals("facebook")) {
+            // facebook
+            System.out.println("페이스북 로그인 요청");
+            oAuth2UserInfo = new FacebookUserInfo(oauth2User.getAttributes());
+        } else {
+            System.out.println("우리는 구글과 페이스북만 지원중입니다.");
+        }
+        String providerId = oAuth2UserInfo.getProvider();
+        String email = oAuth2UserInfo.getEmail();
         String username = providerId + "_" + providerId; // google_sth_sub
-//        String password = bCryptPasswordEncoder.encode("비사이드10기9팀");
-        String password = "test";
+        String password = bCryptPasswordEncoder.encode("oauth2");
         String role = "ROLE_USER";
 
         User userEntity = userRepository.findByUserName(username);
