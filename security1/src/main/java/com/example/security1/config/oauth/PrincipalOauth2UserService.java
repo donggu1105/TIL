@@ -1,9 +1,7 @@
 package com.example.security1.config.oauth;
 
 import com.example.security1.config.auth.PrincipalDetails;
-import com.example.security1.config.oauth.provider.FacebookUserInfo;
-import com.example.security1.config.oauth.provider.GoogleUserInfo;
-import com.example.security1.config.oauth.provider.OAuth2UserInfo;
+import com.example.security1.config.oauth.provider.*;
 import com.example.security1.model.User;
 import com.example.security1.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +12,8 @@ import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
+
+import java.util.Map;
 
 @RequiredArgsConstructor
 @Service
@@ -47,12 +47,19 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
             // facebook
             System.out.println("페이스북 로그인 요청");
             oAuth2UserInfo = new FacebookUserInfo(oauth2User.getAttributes());
+        } else if (provider.equals("naver")) {
+            System.out.println("네이버 로그인 요청");
+            oAuth2UserInfo = new NaverUserInfo((Map)oauth2User.getAttributes().get("response"));
+        } else if (provider.equals("kakao")) {
+            System.out.println("카카오 로그인 요청");
+            oAuth2UserInfo = new KakaoUserInfo(oauth2User.getAttributes());
         } else {
-            System.out.println("우리는 구글과 페이스북만 지원중입니다.");
+            System.out.println("지원하지 않는 Oauth Provider 입니다.");
+
         }
-        String providerId = oAuth2UserInfo.getProvider();
+        String providerId = oAuth2UserInfo.getProviderId();
         String email = oAuth2UserInfo.getEmail();
-        String username = providerId + "_" + providerId; // google_sth_sub
+        String username = provider + "_" + providerId; // google_sth_sub
         String password = bCryptPasswordEncoder.encode("oauth2");
         String role = "ROLE_USER";
 
@@ -60,7 +67,6 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 
 
         if (userEntity == null) {
-            System.out.println("구글 로그인이 최초입니다.");
             userEntity = User.builder()
                     .userName(username)
                     .password(password)
@@ -71,8 +77,6 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
                     .build();
 
             userRepository.save(userEntity);
-        } else {
-            System.out.println("구글 로그인을 이미 한적이 있습니다. 당신은 자동회원가입이 되어 있습니다.");
         }
 
         return new PrincipalDetails(userEntity, oauth2User.getAttributes());
