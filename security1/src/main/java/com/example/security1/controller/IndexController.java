@@ -5,11 +5,9 @@ import com.example.security1.model.User;
 import com.example.security1.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.annotation.Secured;
-import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
@@ -59,17 +57,25 @@ public class IndexController {
         return "oauth 세션 정보 확인하기";
     }
 
+
+
+    @GetMapping("/user")
+    public @ResponseBody String testOAuthLogin(@AuthenticationPrincipal PrincipalDetails principalDetails) {
+        System.out.println("pricipalDetails : " + principalDetails.getUser());
+        return "user";
+    }
+
     @GetMapping({"", "/" })
     public String index() {
         return "index";
     }
 
-
-    @GetMapping("/user")
-    public @ResponseBody
-    String user() {
-        return "user";
-    }
+//
+//    @GetMapping("/user")
+//    public @ResponseBody
+//    String user() {
+//        return "user";
+//    }
 
     @GetMapping("/admin")
     public @ResponseBody
