@@ -1,5 +1,7 @@
-package com.example.jwt.filter;
+package com.example.jwt.config.jwt;
 
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
 import com.example.jwt.auth.PrincipalDetails;
 import com.example.jwt.model.User;
 import com.example.jwt.model.UserRepository;
@@ -18,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.Date;
 
 // 스프링 시큐리티에 UsernamePasswordAuthenticationFilter 가 있음
 // /login 요청해서 username, password 전송하면 (POST)
@@ -65,8 +68,6 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
             e.printStackTrace();
         }
 
-        // 4. JWT 토큰을 만들ㄹ어서 응답해주면됨
-
 
         return null;
     }
@@ -77,7 +78,15 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
         System.out.println("successfulAuthentication 실행됨, 인증이완료됬다는말");
+        PrincipalDetails principalDetails = (PrincipalDetails) authResult.getPrincipal();
 
-        super.successfulAuthentication(request, response, chain, authResult);
+        String jwtToken = JWT.create()
+                .withSubject("jwt토큰")
+                .withExpiresAt(new Date(System.currentTimeMillis() + JwtProperties.EXPIRATION_TIME)) // 10분
+                .withClaim("id", principalDetails.getUser().getId())
+                .withClaim("username", principalDetails.getUser().getUsername())
+                .sign(Algorithm.HMAC512(JwtProperties.SECRET));
+
+        response.addHeader(JwtProperties.HEADER_STRING, JwtProperties.TOKEN_PREFIX + jwtToken);
     }
 }
