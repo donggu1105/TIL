@@ -20,7 +20,6 @@ export default {
   components: {TodoList, TodoInput, TodoFooter, TodoHeader}
 }
 </script>
-
 <style>
 
   body{
