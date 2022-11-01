@@ -1,4 +1,0 @@
-﻿selenium==4.0.0
-pillow
-certifi
-python-dateutil
