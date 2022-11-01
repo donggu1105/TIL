@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "ganache-cli": "^6.12.2",
-    "solc": "^0.8.11",
-    "web3": "^0.20.3"
-  }
-}
