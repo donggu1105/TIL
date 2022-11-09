@@ -5,6 +5,9 @@ plugins {
 android {
     namespace 'com.donggu.study'
     compileSdk 32
+    viewBinding {
+        enabled = true
+    }
 
     defaultConfig {
         applicationId "com.donggu.study"
