@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "study"
 include ':app'
 include ':part2_3'
+include ':part4_10'
