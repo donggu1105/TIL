@@ -1,9 +1,16 @@
 void main(){
   
-  DateTime now = DateTime.now();
-  
-  
-  print(now);
+  int number = 2;
+
+
+  print(number);
+
+  print(number + 2);
+
+
+  print('------');
+
+
 
 
 
