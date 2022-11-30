@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='rendered'>
+    <pages>
+        <page name='1.Preview'/>
+        <page name='1-1.SimpleExample'/>
+        <page name='2-1.AsyncVsSync'/>
+        <page name='2-2.SerialVsConcurrent'/>
+        <page name='3.GCD-Queues'/>
+        <page name='*Caution'/>
+        <page name='4-1.UI-update'/>
+        <page name='4-2.CallbackFunction'/>
+        <page name='4-3.WeakSelf'/>
+        <page name='4-4.AsyncFunction'/>
+        <page name='5.URLSession'/>
+        <page name='6.Async.await'/>
+        <page name='8.ConcurrentToSerial'/>
+    </pages>
+</playground>
