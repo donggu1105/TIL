@@ -79,6 +79,14 @@ func checkNumbersOf2(password: String) -> Bool {
  ---
  */
 
+func test(words: String) -> Bool {
+    guard words.count >= 5 else {print("return false")
+        return false}
+    return true
+}
+
+test(words:"123")
+
 
 // 반드시 코드를 종료해야하는 조기 종료의 조건이 필요하므로, 로컬스코프(함수/반복문) 내에서만 사용 가능
 
