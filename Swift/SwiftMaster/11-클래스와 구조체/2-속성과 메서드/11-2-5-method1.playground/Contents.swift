@@ -2,8 +2,8 @@ import UIKit
 
 
 /*:
-# Part11 - 2 구조체, 클래스의 메서드
-*/
+ # Part11 - 2 구조체, 클래스의 메서드
+ */
 /*:
  ## 1) 인스턴스 메서드
  * 인스턴스 메서드(Instance Methods)
@@ -69,10 +69,10 @@ choco.play()
 
 
 /*:
----
-* 클래스의 인스턴스 메서드(Instance Methods)
----
-*/
+ ---
+ * 클래스의 인스턴스 메서드(Instance Methods)
+ ---
+ */
 
 class Dog1 {
     static var species = "Dog"
@@ -115,10 +115,10 @@ bori1.sit()
 
 
 /*:
----
-* 구조체의 인스턴스 메서드(Instance Methods)
----
-*/
+ ---
+ * 구조체의 인스턴스 메서드(Instance Methods)
+ ---
+ */
 
 // 값 타입(구조체, 열거형)에서 기본적으로 인스턴스 메서드 내에서 속성을 수정할 수 없음
 // 수정하려면, mutating(변형되는)키워드를 붙이면 속성 수정 가능해짐(클래스와 구조체의 차이)
@@ -141,8 +141,17 @@ struct Dog2 {
         self.name = name
     }
     
+    mutating func changeWeight(newWeight weight: Double) {
+        self.weight = weight
+    }
+    
 }
 
+
+var donggu = Dog2(name: "test", weight: 1.0)
+
+donggu.changeWeight(newWeight: 2.0)
+donggu.weight
 
 
 //:> 값타입의 인스턴스 메서드 내에서 자신의 속성값 수정은 원칙적 불가 ➞ mutating 키워드 필요
@@ -153,10 +162,10 @@ struct Dog2 {
 
 
 /*:
----
-* 오버로딩(Overloading)
----
-*/
+ ---
+ * 오버로딩(Overloading)
+ ---
+ */
 
 // 함수에서의 오버로딩과 동일하게, 클래스, 구조체, 열거형의 메서드에서도 오버로딩을 지원
 

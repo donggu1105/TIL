@@ -36,6 +36,9 @@ class BClass: AClass {
 
 let b = BClass()
 
+final class TestClass {}
+
+
 
 // BClass는 AClass를 상속해서 구현
 // 서브클래스는 슈퍼클래스로부터 멤버를 상속함

@@ -58,6 +58,18 @@ Singleton.shared.userInfoId
 
 // private init() 설정으로 새로운 객체 추가적 생성이 불가하게 막는 것 가능
 
+class SingletonTest {
+    static let shared = SingletonTest()
+    var userInfo = 123
+    private init(){}
+}
+
+
+let obj1 = SingletonTest.shared
+obj1.userInfo = 2222
+
+let obj2 = SingletonTest.shared
+obj2.userInfo
 
 
 

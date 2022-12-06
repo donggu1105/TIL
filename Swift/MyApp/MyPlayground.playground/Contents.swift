@@ -1,23 +1,39 @@
 import UIKit
 
-
-
-class Dog {
+class Vehicle {
     
-    var name: String
-    var weight: Double
+    var currentSpeed = 0.0
     
-    init(name: String, weight: Double){
-        
-        self.name = name
-        self.weight = weight
+    var halfSpeed: Double {
+        get {
+            return currentSpeed / 2
+        }
+        set {
+            currentSpeed = newValue * 2
+        }
     }
 }
 
 
+class Bicylce: Vehicle {
+    var hasBasket = false
+    
+    override var currentSpeed: Double {
+        
+//        get {
+//            return super.currentSpeed
+//        }
+//        set {
+//            super.currentSpeed = newValue
+//        }
+        
+        didSet {
+            print("\(oldValue) -> \(currentSpeed)")
+            
+        }
+    }
+}
 
+var b = Bicylce()
 
-var maru = Dog(name: "maru", weight: 12)
-va
-bori.name
-
+b.currentSpeed = 2.0

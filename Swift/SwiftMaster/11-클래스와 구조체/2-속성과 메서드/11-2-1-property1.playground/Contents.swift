@@ -87,6 +87,19 @@ var aBird1 = Bird1(name: "새")   // weight 속성 초기화 안됨
 aBird1.weight  // <============ 해당 변수에 접근하는 이 시점에 초기화됨 (메모리 공간이 생기고 숫자가 저장됨)
 
 
+struct TestStruct {
+    
+    var name: String
+    lazy var weight: Double = 0.2
+    
+    init (name: String){
+        self.name = name
+    }
+    
+}
+
+var testStruct = TestStruct(name: "test")
+print(testStruct.name)
 
 
 /**===========================================================
@@ -149,6 +162,10 @@ class AView {
         self.a = num
     }
 }
+var view1 = AView(num: 10)
+
+
+
 
 
 /**====================================================
@@ -175,6 +192,13 @@ class AView {
 ======================================================**/
 
 
+func addTwoNumbers(_ a: Int, _ b:Int) -> Int {
+    var c = a + b
+    return c
+    
+}
+
+var x = addTwoNumbers(3, 2)
 
 
 

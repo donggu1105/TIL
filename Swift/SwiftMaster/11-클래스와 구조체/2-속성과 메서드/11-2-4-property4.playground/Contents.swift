@@ -20,6 +20,13 @@ class Profile {
         }
     }
     
+    
+    var profileMessage: String = "프로파일 메시지" {
+        willSet(message) {
+            print("메세지가 \(profileMessage)에서 \(message)로 변경될 예정쓰")
+        }
+    }
+    
 }
 
 
@@ -28,11 +35,12 @@ let p = Profile()
 p.name
 p.name = "전지현"
 
-//p.statusMessage
-//p.statusMessage = "행복해"
+p.statusMessage
+p.statusMessage = "행복해"
+p.statusMessage = "행복해2"
 //
 //p.statusMessage = "우울해"
-
+p.profileMessage = "키키"
 
 
 

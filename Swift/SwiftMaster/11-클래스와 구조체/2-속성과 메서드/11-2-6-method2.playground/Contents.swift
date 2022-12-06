@@ -115,7 +115,19 @@ class SomeThingClass: SomeClass {
 SomeThingClass.someTypeMethod()
 
 
+class Parent {
+    class func test(){
+        print("야 테스트다")
+    }
+}
 
+class Child: Parent {
+    override class func test() {
+        print("야 테스트다2")
+    }
+}
+
+Child.test()
 //:> class - 상속시 재정의 가능 키워드
 // static 키워드로 선언하면 (상속시)재정의 불가 (상속이 불가한 것 아님)
 

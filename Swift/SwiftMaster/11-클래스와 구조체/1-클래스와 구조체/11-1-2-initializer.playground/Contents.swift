@@ -123,15 +123,33 @@ class Dog2 {
 // 인스턴스내에서 동일한 변수명, 상수명을 사용할때
 // 가르키는 것을 명확하게 하기 위해 self키워드를 사용
 
-//:> self 키워드는 클래스/구조체 내에서 해당 인스턴스(자기자신)를 가르킴
-
 
 /*:
 ---
 * 초기화의 의미 - 속성이 옵셔널 타입인 경우
 ---
 */
+class Test {
+    var name: String?
+    var weight: Int
+    
+    init(name: String = "test", weight: Int){
+        self.name = name
+        self.weight = weight
+        
+    }
+    
+    
+}
 
+var test = Test(weight: 1)
+test.name
+
+print("\(test.name) test name")
+
+
+
+ 
 class Dog3 {
     var name: String?
     var weight: Int
@@ -149,6 +167,18 @@ class Dog3 {
         print("\(name) 누웠습니다.")
     }
 }
+
+
+var dog123 = Dog3(weight: 123)
+
+
+if let name = dog123.name {
+    print(name)
+    
+}
+
+dog123.name
+dog123.weight
 
 
 
@@ -178,6 +208,29 @@ print(dog1 !== dog2)
 
 
 
+
+class Book {
+    
+    var name: String
+    var price: Int
+    var company: String
+    var author: String
+    var pages: Int
+    
+    init(name: String, price: Int, company: String, author: String, pages:Int) {
+        
+        self.name = name
+        self.price = price
+        self.company = company
+        self.author = author
+        self.pages = pages
+    }
+    
+}
+
+var book1 = Book(name: "tes", price: 1, company: "123", author: "12", pages: 1)
+
+                 book1.name
 
 
 
