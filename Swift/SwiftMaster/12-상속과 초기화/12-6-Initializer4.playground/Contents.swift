@@ -57,6 +57,22 @@ mysteryMeat.name
 // convenience init()    편의생성자
 
 
+
+class Pasta: Food {
+    
+    var quantity: Int
+    
+    init(name: String, quantity: Int) {
+        self.quantity = quantity
+        super.init(name: name)
+    }
+    override convenience init(name: String) {
+        self.init(name: name, quantity: 1)
+    }
+}
+
+var pasta = Pasta()
+pasta.quantity 
 // 레서피 재료
 
 class RecipeIngredient: Food {

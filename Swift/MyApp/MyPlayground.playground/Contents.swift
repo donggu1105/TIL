@@ -1,39 +1,26 @@
 import UIKit
 
-class Vehicle {
+
+
+
+class Color {
     
-    var currentSpeed = 0.0
+    let red, blue, green: Double
     
-    var halfSpeed: Double {
-        get {
-            return currentSpeed / 2
-        }
-        set {
-            currentSpeed = newValue * 2
-        }
+    
+    convenience init(red: Double) {
+        self.init(red: red, blue: 1.0, green: 1.0)
+    }
+    
+    
+    init(red: Double, blue: Double, green: Double) {
+        self.red = red
+        self.blue = blue
+        self.green = green
     }
 }
 
+var c = Color(red: 2.0)
 
-class Bicylce: Vehicle {
-    var hasBasket = false
-    
-    override var currentSpeed: Double {
-        
-//        get {
-//            return super.currentSpeed
-//        }
-//        set {
-//            super.currentSpeed = newValue
-//        }
-        
-        didSet {
-            print("\(oldValue) -> \(currentSpeed)")
-            
-        }
-    }
-}
+c.blue
 
-var b = Bicylce()
-
-b.currentSpeed = 2.0
