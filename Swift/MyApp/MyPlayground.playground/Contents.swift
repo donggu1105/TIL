@@ -2,4 +2,19 @@ import UIKit
 
 
 
-// is - 타입 연산자
+
+class Day {
+    
+    enum WeekDay {
+        case mon
+        case tue
+        case wed
+        
+    }
+    
+    var day: WeekDay = .mon
+    
+}
+
+
+var ddd: Day.WeekDay = Day.WeekDay.mon

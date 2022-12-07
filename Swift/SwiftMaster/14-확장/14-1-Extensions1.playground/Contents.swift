@@ -40,6 +40,9 @@ class SomeType {
 
 extension SomeType {      // 기존의 타입에 extension 이라는 키워드를 사용해서 확장하고, 새로운 기능을 정의
     // 새로운 기능을 추가 가능(메서드 형태만 가능) ⭐️
+    func doSomething() {
+        print("확장완료")
+    }
     
 }
 
@@ -107,7 +110,7 @@ class Undergraduate: Student {
 //    }
 }
 
-
+Int
 
 //extension Undergraduate {
 //    override func play() {
@@ -132,12 +135,6 @@ extension Int {
 3.squared
 7.squared
 
-
-/*:
- ---
- * 확장 가능 멤버의 종류
- ---
- */
 //:> 확장에서는 메서드형태만 정의 가능
 /**==========================================================================================
  - 클래스, 구조체, (열거형) 확장가능 멤버

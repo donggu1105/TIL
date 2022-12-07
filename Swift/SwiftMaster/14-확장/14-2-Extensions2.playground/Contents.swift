@@ -2,10 +2,10 @@ import UIKit
 
 
 /*:
-## 1) 멤버의 확장(계산 속성)
-* 1-1. (타입)계산 속성의 확장
----
-*/
+ ## 1) 멤버의 확장(계산 속성)
+ * 1-1. (타입)계산 속성의 확장
+ ---
+ */
 // (타입) 계산 속성 또는 (인스턴스) 계산 속성 확장 가능
 // (저장된 속성을 추가하거나 기존 속성에 속성 관찰자를 추가 할 수는 없음)
 
@@ -16,7 +16,12 @@ extension Double {
 
 Double.zero
 
+extension Double {
+    static var test: Double {return 1.0}
+    
+}
 
+Double.test
 
 /*:
  ---
