@@ -112,6 +112,13 @@ person.email
 
 
 
+if let p123 = person as? Undergraduate {
+    
+    p123.name
+}
+
+
+
 //:> as? / as! (다운캐스팅)
 
 let ppp = person as? Undergraduate  // Undergraduate? 타입

@@ -107,16 +107,21 @@ let undergraduate2 = Undergraduate()
 
 let people = [person1, person2, student1, student2, undergraduate1, undergraduate2]
 
-
-// 학생 인스턴스의 갯수를 세고 싶다.
-
 var studentNumber = 0
 
-for someOne in people {
-    if someOne is Student {
+// 학생 인스턴스의 갯수를 세고 싶다.
+for person in people {
+    if person is Student {
         studentNumber += 1
     }
 }
+//var studentNumber = 0
+//
+//for someOne in people {
+//    if someOne is Student {
+//        studentNumber += 1
+//    }
+//}
 
 
 print(studentNumber)

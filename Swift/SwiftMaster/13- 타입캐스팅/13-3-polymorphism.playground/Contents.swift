@@ -58,14 +58,14 @@ class Undergraduate: Student {
 
 
 let person1 = Person()
-person1.walk()
+person1.walk() // 사람이 걷는다.
 
 
 
-let student1 = Student()
-//let student1: Person = Student()
-student1.walk()
-student1.study()
+//let student1 = Student()
+let student1: Person = Student()
+student1.walk() // 학생이 걷는다.
+//student1.study() // 학생이 공부한다.
 
 
 

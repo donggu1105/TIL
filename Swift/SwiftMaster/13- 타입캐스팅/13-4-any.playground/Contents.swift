@@ -22,6 +22,8 @@ import UIKit
 // 1) Any타입 ============================================
 
 var some: Any = "Swift"
+
+(some as! String).count
 some = 10
 some = 3.2
 
@@ -47,6 +49,7 @@ let array: [Any] = [5, "안녕", 3.5, Person(), Superman(), {(name: String) in r
 
 //array[1].count
 (array[1] as! String).count
+
 
 
 
