@@ -2,19 +2,26 @@ import UIKit
 
 
 
+ protocol Remote {
+    func turnOn()
+}
 
-class Day {
-    
-    enum WeekDay {
-        case mon
-        case tue
-        case wed
-        
-    }
-    
-    var day: WeekDay = .mon
-    
+class TV: Remote {
 }
 
 
-var ddd: Day.WeekDay = Day.WeekDay.mon
+
+extension Remote {
+    func turnOn() {
+        print("protocol extended")
+    }
+    
+    func doAnotherAction(){
+        print("another action is called")
+    }
+}
+
+
+var tv = TV()
+
+tv.turnOn()
