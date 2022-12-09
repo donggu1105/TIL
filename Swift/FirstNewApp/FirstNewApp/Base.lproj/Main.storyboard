@@ -120,6 +120,7 @@
                     </view>
                     <connections>
                         <outlet property="mainLabel" destination="ub6-aJ-bJd" id="thL-Ur-pTa"/>
+                        <outlet property="slider" destination="2QH-KQ-5DD" id="R4V-tP-QFL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
