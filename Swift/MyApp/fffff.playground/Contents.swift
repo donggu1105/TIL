@@ -25,5 +25,16 @@ func performClosure(param: (String) -> Int) {
 
 
 performClosure {
-        return $0.count
+         $0.count
+}
+
+let testClosure = {(a: Int, b: Int) -> Int in return a * b}
+
+let testClosure1: (Int, Int) -> Int = {$0 * $1}
+
+
+
+
+Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+    print(1)
 }
