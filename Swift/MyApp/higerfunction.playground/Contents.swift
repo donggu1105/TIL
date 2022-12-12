@@ -1,23 +1,32 @@
 import UIKit
 
-let numbers = [1,2,3,4,5]
+
+let array = [1,2,3,4,5,6,7,8,9,10]
 
 
-let numbers2 = numbers.map { num in return num + 3 }
-let numbers3 = numbers.map { num in return "숫자 : \(num)"}
+let array2 = array.reduce(0) { a, b in
+    return a + b
+}
 
-print(numbers2)
-print(numbers3)
-
-let numbers4 = numbers.map {num in return "wassup"}
-
-print(numbers4)
-
-let numbers5 = numbers.map {num in return "what"}
-
-print(numbers5)
+print(type(of: array2))
 
 
-let newNumber = numbers.map { "숫자 : \($0)"}
 
-print(newNumber)
+let array3 = array.filter {return $0 % 2 == 1}.map {return $0 * $0}.reduce(0) { a, b in
+    return a + b
+}
+
+print(array3)
+
+let immutableArray = [1,2,3,4,5]
+
+
+immutableArray.forEach { num in
+    print(num)
+}
+
+
+let stringArray: [String?] = ["A",nil, "B"]
+
+let stringArray2: [String] = stringArray.compactMap {$0}
+print(stringArray2)
