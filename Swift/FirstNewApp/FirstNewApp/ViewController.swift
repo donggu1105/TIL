@@ -16,16 +16,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     
     weak var timer: Timer?
-
+    
     var number: Int = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configureUI()
-            
-
+        
+        
     }
     
     func configureUI() {
@@ -34,9 +34,9 @@ class ViewController: UIViewController {
         slider.setValue(0.5, animated: true)
         slider.setThumbImage(UIImage(named: "icons8-thumbs-up-48"), for: .normal)
         
-
+        
     }
-
+    
     @IBAction func sliderChanged(_ sender: UISlider) {
         
         let seconds = Int(slider.value * 60)
@@ -56,24 +56,27 @@ class ViewController: UIViewController {
         
         timer?.invalidate()
         
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [self] _  in
-            
-            if number > 0 {
-                number -= 1
-                
-                slider.value = Float(number) / Float(60)
-                mainLabel.text = "\(number) 초"
-            } else {
-                number = 0
-                timer?.invalidate()
-                
-                AudioServicesPlayAlertSound(SystemSoundID(1322))
-            }
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(doSomethingAfter1Second), userInfo: nil, repeats: true)
+        
+}
 
+    @objc func doSomethingAfter1Second() {
+        
+        if number > 0 {
+            number -= 1
             
+            slider.value = Float(number) / Float(60)
+            mainLabel.text = "\(number) 초"
+        } else {
+            number = 0
+            timer?.invalidate()
+            
+            AudioServicesPlayAlertSound(SystemSoundID(1322))
         }
+        
     }
-    
-    
+
+
 }
 
