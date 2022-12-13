@@ -9,36 +9,34 @@ import UIKit
 import SnapKit
 
 class ViewController: UIViewController {
+    
+    lazy var topStackView: UIStackView = {
+        
+        let stackView = UIStackView()
+        stackView.spacing = 10
+        stackView.alignment = .center
+        stackView.axis = .horizontal
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = .fillEqually
+        
+        return stackView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor.white
-        
-        let yellowView = UIView()
-        yellowView.backgroundColor = UIColor.yellow
-//        yellowView.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.view.addSubview(yellowView)
-                
-        yellowView.snp.makeConstraints{ (make) -> Void in
-            make.width.equalTo(100)
-            make.height.equalTo(100)
-            make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(300)
-            
-        }
-        
-//    NSLayoutConstraint.activate([
-//        yellowView.widthAnchor.constraint(equalToConstant: 100),
-//        yellowView.heightAnchor.constraint(equalToConstant: 100),
-//        yellowView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//        yellowView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 100)
-//    ])
-//
+        self.view.backgroundColor = UIColor.yellow
         
         
+        // 서브뷰 추가
+        self.view.addSubview(topStackView)
         
+        // 위치 잡기
+        NSLayoutConstraint.activate([
+            topStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            topStackView.
+        
+        ])
         
         
     }
