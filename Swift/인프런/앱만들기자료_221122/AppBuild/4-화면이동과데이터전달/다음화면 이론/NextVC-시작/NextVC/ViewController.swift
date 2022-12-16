@@ -41,6 +41,7 @@ class ViewController: UIViewController {
             present(secondVC, animated: true, completion: nil)
         }
         
+        
     }
     
     
@@ -49,12 +50,34 @@ class ViewController: UIViewController {
     @IBAction func storyboardWithSegueButtonTapped(_ sender: UIButton) {
         
 
-        
+        performSegue(withIdentifier: "toThirdVC", sender: self)
         
         
         
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toThirdVC" {
+            let thirdVC = segue.destination as! ThirdViewController
+            
+            thirdVC.someString = "wow"
+            
+        }
+        
+        if segue.identifier == "toFourthVC" {
+            let fourthVC = segue.destination as! FourthViewController
+            
+            
+            fourthVC.someString = "jheheheheh"
+        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        
+        if 
+    }
 
     
 }
