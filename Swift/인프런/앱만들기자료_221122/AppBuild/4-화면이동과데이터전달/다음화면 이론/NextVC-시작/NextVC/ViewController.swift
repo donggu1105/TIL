@@ -76,7 +76,6 @@ class ViewController: UIViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
         
-        if 
     }
 
     
