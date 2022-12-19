@@ -16,10 +16,7 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var backButton: UIButton!
     
-    
-    var bmiNumber: Double?
-    var adviceString: String?
-    var bmiColor: UIColor?
+ 
     
     
     override func viewDidLoad() {

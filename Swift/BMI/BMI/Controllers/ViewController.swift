@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var calculateButton: UIButton!
     
-    var bmi: Double?
+    var bmiManager: BMICalculatorManager = BMICalculatorManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +47,11 @@ class ViewController: UIViewController {
     
     @IBAction func calculateButtonTapped(_ sender: UIButton) {
         
-        bmi = calculateBMT(height: heightTextField.text!, weight: weightTextField.text!)
         
+        
+        bmiManager.calculateBMT(height: heightTextField.text!, weight: weightTextField.text!)
+        
+//        bmiManager.getBMIResult()
         
     }
     
@@ -59,9 +62,9 @@ class ViewController: UIViewController {
             let secondVC = segue.destination as! SecondViewController
             
             // 계산된 결과값을 다음화면으로 전달
-            secondVC.bmiNumber = self.bmi
-            secondVC.bmiColor = getBackgroundColor()
-            secondVC.adviceString = getBMIAdviceString()
+            secondVC.bmiNumber = bmiManager.getBMIResult()
+            secondVC.bmiColor = bmiManager.getBackgroundColor()
+            secondVC.adviceString = bmiManager.getBMIAdviceString()
             
         }
         
@@ -70,57 +73,7 @@ class ViewController: UIViewController {
         weightTextField.text = ""
         
     }
-    
-    func getBackgroundColor() -> UIColor {
-        guard let bmi = bmi else {return UIColor.black}
-        
-        switch bmi {
-            case ..<18.6:
-                return UIColor(displayP3Red: 22/255, green: 231/255, blue: 207/255, alpha: 1)
-        case 18.6..<23.0:
-                return UIColor(displayP3Red: 212/255, green: 251/255, blue: 121/255, alpha: 1)
-        case 23.0..<25.0:
-                return UIColor(displayP3Red: 218/255, green: 127/255, blue: 164/255, alpha: 1)
-        case 25.0..<30.0:
-                return UIColor(displayP3Red: 255/255, green: 150/255, blue: 141/255, alpha: 1)
-        case 30...:
-                return UIColor(displayP3Red: 255/255, green: 100/255, blue: 178/255, alpha: 1)
-        default:
-            return .black
-        }
-    }
-    
-    // 문자열 얻는 메서드
-    func getBMIAdviceString() -> String {
-        guard let bmi = bmi else { return "" }
-        switch bmi {
-        case ..<18.6:
-            return "저체중"
-        case 18.6..<23.0:
-            return "표준"
-        case 23.0..<25.0:
-            return "과체중"
-        case 25.0..<30.0:
-            return "중도비만"
-        case 30.0...:
-            return "고도비만"
-        default:
-            return ""
-        }
-    }
-    
-    
-    func calculateBMT(height: String, weight: String) -> Double {
-        guard let h = Double(height), let w = Double(weight) else {return 0.0}
-        
-        var bmi = w / (h * h) * 10000
-        
-        bmi = round(bmi * 10) / 10
-        
-        return bmi
-        
-    }
-    
+
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if heightTextField.text == "" || weightTextField.text == "" {
