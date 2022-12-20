@@ -30,4 +30,15 @@ class DataManager {
         ]
     }
     
+    
+    func updateMovieData() {
+        
+        let movie = Movie(movieImage: UIImage(named: "blackpanther.png"), movieName: "블랙펜서", movieDescription: "와칸다의 왕위 계승자 티찰과 블랙펜서가 되다.")
+        
+        
+        moviesArray.append(movie)
+        
+    }
+    
+    
 }

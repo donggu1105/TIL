@@ -19,11 +19,16 @@ class ViewController: UIViewController  {
         
         tableView.dataSource = self
         tableView.rowHeight = 120
-        tableView.delegate = self 
-        
+        tableView.delegate = self
+        title = "영화목록"
         movieDataManager.makeMovieData()
     }
 
+    @IBAction func addButtonTapped(_ sender: Any) {
+        
+        movieDataManager.updateMovieData()
+        tableView.reloadData()
+    }
 }
 
 extension ViewController: UITableViewDataSource {
