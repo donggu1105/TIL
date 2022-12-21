@@ -13,6 +13,22 @@ final class ViewController: UIViewController {
     
     
     var memberListManager = MemberListManager()
+    
+    
+    lazy var plusButton: UIBarButtonItem = {
+        
+        let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(plusButtonTapped))
+        
+        return button
+        
+        
+    }()
+    
+    @objc func plusButtonTapped() {
+        let detailVC = DetailViewController()
+        
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +40,11 @@ final class ViewController: UIViewController {
         setupNaviBar()
         setupTableViewConstrains()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
     }
     
     func setUpDatas() {
@@ -43,6 +64,9 @@ final class ViewController: UIViewController {
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
+        
+        self.navigationItem.rightBarButtonItem = self.plusButton
         
     }
     
@@ -103,6 +127,7 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let detailVC = DetailViewController()
+        detailVC.delegate = self // 델리게이트 적용
         
         
         let array = memberListManager.getMembersList()
@@ -112,5 +137,20 @@ extension ViewController: UITableViewDelegate {
         navigationController?.pushViewController(detailVC, animated: true)
         
     }
+    
+}
+
+extension ViewController: MemberDelegate {
+    func addNewMember(_ member: Member) {
+        memberListManager.makeNewMember(member)
+        tableView.reloadData()
+    }
+    
+    func update(index: Int, _ member: Member) {
+        memberListManager.updateMemberInfo(index: index, member)
+        tableView.reloadData()
+    }
+    
+    
     
 }

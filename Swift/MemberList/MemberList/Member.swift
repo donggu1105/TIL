@@ -8,6 +8,13 @@
 import UIKit
 
 
+protocol MemberDelegate: AnyObject {
+    
+    func addNewMember(_ member: Member)
+    func update(index: Int, _ member: Member)
+        
+}
+
 
 struct Member {
         
