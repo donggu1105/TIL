@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="137" id="loW-Zb-O3G">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="137" id="loW-Zb-O3G" customClass="ToDoCell" customModule="TodoApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="loW-Zb-O3G" id="gwA-zH-wgF">
@@ -59,6 +59,9 @@
                                                                             <state key="normal" title="update" image="pencil" catalog="system">
                                                                                 <color key="titleColor" systemColor="systemBackgroundColor"/>
                                                                             </state>
+                                                                            <connections>
+                                                                                <action selector="updateButtonTapped:" destination="loW-Zb-O3G" eventType="touchUpInside" id="WBX-Dm-feM"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" systemColor="systemBrownColor"/>
@@ -89,12 +92,18 @@
                                                 <constraint firstAttribute="bottom" secondItem="6tt-Ly-Dfn" secondAttribute="bottom" constant="10" id="tfk-rf-M27"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="backView" destination="6tt-Ly-Dfn" id="8p0-Bv-HhS"/>
+                                            <outlet property="dateTextLabel" destination="Td4-jK-C8N" id="R6D-u2-cpO"/>
+                                            <outlet property="toDoTextLabel" destination="vDY-mv-wi1" id="aIX-Ha-Zgh"/>
+                                            <outlet property="updateButton" destination="r9N-qg-YDU" id="Glb-sQ-vgT"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="d07-O2-FsF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1BV-JU-cV9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d07-O2-FsF" secondAttribute="trailing" id="Ma2-ae-LbP"/>
@@ -103,10 +112,30 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0fV-2d-L6m"/>
+                    <connections>
+                        <outlet property="tableView" destination="d07-O2-FsF" id="glw-g6-b7S"/>
+                        <segue destination="OhN-o9-1ZW" kind="show" identifier="ToDoCell" id="1Ml-YI-4fB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1052.6717557251909" y="-27.464788732394368"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Drp-gX-In9">
+            <objects>
+                <viewController id="OhN-o9-1ZW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l4m-Zh-4S2">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="H7R-xW-NjB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Qp0-FH-0xe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QZX-PT-Pai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2045" y="-14"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CcZ-De-AKS">
@@ -116,7 +145,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="rHD-G9-QyB">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <navigationBarAppearance key="standardAppearance"/>
                         <navigationBarAppearance key="scrollEdgeAppearance">
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

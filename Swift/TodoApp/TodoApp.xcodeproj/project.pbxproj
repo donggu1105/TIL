@@ -14,6 +14,10 @@
 		6047CC88295574B5002F8CDA /* TodoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6047CC86295574B5002F8CDA /* TodoApp.xcdatamodeld */; };
 		6047CC8A295574B9002F8CDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6047CC89295574B9002F8CDA /* Assets.xcassets */; };
 		6047CC8D295574B9002F8CDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6047CC8B295574B9002F8CDA /* LaunchScreen.storyboard */; };
+		607C83C729558B5B00323B00 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607C83C629558B5B00323B00 /* CoreDataManager.swift */; };
+		607C83C92955917C00323B00 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607C83C82955917C00323B00 /* ToDoCell.swift */; };
+		607C83CC2955A02800323B00 /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607C83CB2955A02800323B00 /* MyColor.swift */; };
+		607C83CE2955A40700323B00 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607C83CD2955A40700323B00 /* UIColor+Extension.swift */; };
 		60F954832955774D00073257 /* ToDoData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F954812955774D00073257 /* ToDoData+CoreDataClass.swift */; };
 		60F954842955774D00073257 /* ToDoData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F954822955774D00073257 /* ToDoData+CoreDataProperties.swift */; };
 		60F95486295579F400073257 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F95485295579F400073257 /* DetailViewController.swift */; };
@@ -29,6 +33,10 @@
 		6047CC89295574B9002F8CDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6047CC8C295574B9002F8CDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6047CC8E295574B9002F8CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		607C83C629558B5B00323B00 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		607C83C82955917C00323B00 /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
+		607C83CB2955A02800323B00 /* MyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
+		607C83CD2955A40700323B00 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		60F954812955774D00073257 /* ToDoData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		60F954822955774D00073257 /* ToDoData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		60F95485295579F400073257 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +72,7 @@
 		6047CC7C295574B5002F8CDA /* TodoApp */ = {
 			isa = PBXGroup;
 			children = (
+				607C83CA2955A00D00323B00 /* Helpers */,
 				6047CC7D295574B5002F8CDA /* AppDelegate.swift */,
 				6047CC7F295574B5002F8CDA /* SceneDelegate.swift */,
 				60F9547C2955756F00073257 /* Models */,
@@ -75,6 +84,15 @@
 				6047CC86295574B5002F8CDA /* TodoApp.xcdatamodeld */,
 			);
 			path = TodoApp;
+			sourceTree = "<group>";
+		};
+		607C83CA2955A00D00323B00 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				607C83CB2955A02800323B00 /* MyColor.swift */,
+				607C83CD2955A40700323B00 /* UIColor+Extension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		60F9547A2955756500073257 /* Controllers */ = {
@@ -90,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				6047CC83295574B5002F8CDA /* Main.storyboard */,
+				607C83C82955917C00323B00 /* ToDoCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -99,6 +118,7 @@
 			children = (
 				60F954812955774D00073257 /* ToDoData+CoreDataClass.swift */,
 				60F954822955774D00073257 /* ToDoData+CoreDataProperties.swift */,
+				607C83C629558B5B00323B00 /* CoreDataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,9 +197,13 @@
 				6047CC82295574B5002F8CDA /* ViewController.swift in Sources */,
 				6047CC7E295574B5002F8CDA /* AppDelegate.swift in Sources */,
 				6047CC80295574B5002F8CDA /* SceneDelegate.swift in Sources */,
+				607C83CE2955A40700323B00 /* UIColor+Extension.swift in Sources */,
 				60F954842955774D00073257 /* ToDoData+CoreDataProperties.swift in Sources */,
 				60F954832955774D00073257 /* ToDoData+CoreDataClass.swift in Sources */,
+				607C83CC2955A02800323B00 /* MyColor.swift in Sources */,
 				6047CC88295574B5002F8CDA /* TodoApp.xcdatamodeld in Sources */,
+				607C83C729558B5B00323B00 /* CoreDataManager.swift in Sources */,
+				607C83C92955917C00323B00 /* ToDoCell.swift in Sources */,
 				60F95486295579F400073257 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
