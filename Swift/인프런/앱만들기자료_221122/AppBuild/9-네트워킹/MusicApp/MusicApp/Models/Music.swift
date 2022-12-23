@@ -14,6 +14,7 @@ import Foundation
 struct MusicData: Codable {
     let resultCount: Int
     let results: [Music]
+    
 }
 
 // 실제 우리가 사용하게될 음악(Music) 모델 구조체

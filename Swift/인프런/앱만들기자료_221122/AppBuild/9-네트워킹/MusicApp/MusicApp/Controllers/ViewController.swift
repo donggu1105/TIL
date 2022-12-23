@@ -63,6 +63,7 @@ final class ViewController: UIViewController {
     
     // 데이터 셋업
     func setupDatas() {
+        
         // 네트워킹의 시작
         networkManager.fetchMusic(searchTerm: "jazz") { result in
             print(#function)
