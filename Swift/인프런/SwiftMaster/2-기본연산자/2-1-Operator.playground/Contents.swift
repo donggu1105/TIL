@@ -191,7 +191,7 @@ value %= 2
 
 //value++    //다른 언어에서 1을 증가시키는 방법(스위프트에서 지원하지 않음)
 
-
+// here
 //스위프트에서의 올바른 방식
 value += 1
 
@@ -224,7 +224,6 @@ a < b
 
 // 작거나 같다(Less than or equal to operator)
 a <= b
-
 
 
 
