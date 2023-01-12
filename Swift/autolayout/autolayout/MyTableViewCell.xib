@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="149" id="r46-UM-Jkq" customClass="MyTableViewCell" customModule="autolayout" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="149"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r46-UM-Jkq" id="uLY-sE-hEV">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="149"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image001" translatesAutoresizingMaskIntoConstraints="NO" id="aag-ag-QoS">
+                        <rect key="frame" x="8" y="8" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="HvH-MP-n0b"/>
+                            <constraint firstAttribute="height" constant="50" id="INS-0W-3LF"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FO3-q0-Rit">
+                        <rect key="frame" x="66" y="8" width="34.666666666666657" height="48"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="동구" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSI-k5-sv2">
+                                <rect key="frame" x="0.0" y="0.0" width="34.666666666666664" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설명" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2G-4I-T4D">
+                                <rect key="frame" x="0.0" y="24" width="34.666666666666664" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="eFk-GI-YQD">
+                        <rect key="frame" x="8" y="99.666666666666671" width="165" height="34.333333333333329"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnL-q4-7Ik">
+                                <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="34.333333333333336"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up.on.square" catalog="system" title=""/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VsJ-Ni-u14">
+                                <rect key="frame" x="55.666666666666671" y="0.0" width="53.666666666666671" height="34.333333333333336"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="highlighter" catalog="system" title=""/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZ4-L5-W9N">
+                                <rect key="frame" x="111.33333333333333" y="0.0" width="53.666666666666671" height="34.333333333333336"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="trash.slash" catalog="system" title=""/>
+                            </button>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7e-Cd-Gtg">
+                        <rect key="frame" x="8" y="66" width="377" height="25.666666666666671"/>
+                        <mutableString key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</mutableString>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="FO3-q0-Rit" firstAttribute="leading" secondItem="aag-ag-QoS" secondAttribute="trailing" constant="8" id="3Vw-Uy-wVm"/>
+                    <constraint firstItem="aag-ag-QoS" firstAttribute="top" secondItem="uLY-sE-hEV" secondAttribute="top" constant="8" id="LH1-SE-iBF"/>
+                    <constraint firstItem="eFk-GI-YQD" firstAttribute="leading" secondItem="d7e-Cd-Gtg" secondAttribute="leading" id="Y3b-fQ-WCv"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="d7e-Cd-Gtg" secondAttribute="trailing" constant="8" id="ayL-Jo-qYx"/>
+                    <constraint firstItem="d7e-Cd-Gtg" firstAttribute="top" secondItem="aag-ag-QoS" secondAttribute="bottom" constant="8" id="bKp-cj-qTe"/>
+                    <constraint firstItem="FO3-q0-Rit" firstAttribute="top" secondItem="aag-ag-QoS" secondAttribute="top" id="bcs-KL-ZTe"/>
+                    <constraint firstItem="eFk-GI-YQD" firstAttribute="top" secondItem="d7e-Cd-Gtg" secondAttribute="bottom" constant="8" id="gCk-CQ-z2T"/>
+                    <constraint firstAttribute="bottom" secondItem="eFk-GI-YQD" secondAttribute="bottom" constant="15" id="n9I-Vh-J4z"/>
+                    <constraint firstItem="FO3-q0-Rit" firstAttribute="height" secondItem="aag-ag-QoS" secondAttribute="height" multiplier="0.96" id="nd5-Ou-QTy"/>
+                    <constraint firstItem="d7e-Cd-Gtg" firstAttribute="leading" secondItem="aag-ag-QoS" secondAttribute="leading" id="wVV-QN-L9v"/>
+                    <constraint firstItem="aag-ag-QoS" firstAttribute="leading" secondItem="uLY-sE-hEV" secondAttribute="leading" constant="8" id="xzH-q8-yMr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="userContentLabel" destination="d7e-Cd-Gtg" id="4hD-zW-OAh"/>
+                <outlet property="userProfileImg" destination="aag-ag-QoS" id="RBu-Rh-nms"/>
+            </connections>
+            <point key="canvasLocation" x="116.79389312977099" y="-79.225352112676063"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="highlighter" catalog="system" width="128" height="120"/>
+        <image name="image001" width="37.5" height="25.5"/>
+        <image name="square.and.arrow.up.on.square" catalog="system" width="119" height="128"/>
+        <image name="trash.slash" catalog="system" width="117" height="128"/>
+    </resources>
+</document>
