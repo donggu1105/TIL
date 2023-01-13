@@ -13,6 +13,8 @@
 		602582BA296FDA47003ACD61 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 602582B9296FDA47003ACD61 /* Preview Assets.xcassets */; };
 		602582C4296FDCC7003ACD61 /* MainVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 602582C3296FDCC7003ACD61 /* MainVC.storyboard */; };
 		602582C6296FDCD8003ACD61 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602582C5296FDCD8003ACD61 /* MainVC.swift */; };
+		602582C82970D8D8003ACD61 /* TodoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602582C72970D8D8003ACD61 /* TodoCell.xib */; };
+		602582CA2970DB47003ACD61 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602582C92970DB47003ACD61 /* TodoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		602582B9296FDA47003ACD61 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		602582C3296FDCC7003ACD61 /* MainVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainVC.storyboard; sourceTree = "<group>"; };
 		602582C5296FDCD8003ACD61 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		602582C72970D8D8003ACD61 /* TodoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoCell.xib; sourceTree = "<group>"; };
+		602582C92970DB47003ACD61 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 		602582C0296FDC66003ACD61 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				602582C72970D8D8003ACD61 /* TodoCell.xib */,
+				602582C92970DB47003ACD61 /* TodoCell.swift */,
 				602582C3296FDCC7003ACD61 /* MainVC.storyboard */,
 				602582C5296FDCD8003ACD61 /* MainVC.swift */,
 			);
@@ -143,6 +149,7 @@
 				602582C4296FDCC7003ACD61 /* MainVC.storyboard in Resources */,
 				602582BA296FDA47003ACD61 /* Preview Assets.xcassets in Resources */,
 				602582B7296FDA47003ACD61 /* Assets.xcassets in Resources */,
+				602582C82970D8D8003ACD61 /* TodoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +163,7 @@
 				602582B5296FDA44003ACD61 /* ContentView.swift in Sources */,
 				602582C6296FDCD8003ACD61 /* MainVC.swift in Sources */,
 				602582B3296FDA44003ACD61 /* TodoAppTutorialApp.swift in Sources */,
+				602582CA2970DB47003ACD61 /* TodoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
