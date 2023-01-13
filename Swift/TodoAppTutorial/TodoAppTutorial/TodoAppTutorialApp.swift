@@ -15,7 +15,7 @@ struct TodoAppTutorialApp: App {
         WindowGroup {
             TabView {
                 
-                ContentView()
+                TodosView()
                     .tabItem {
                         Image(systemName: "1.square.fill")
                         Text("SwfitUI")

@@ -15,6 +15,10 @@
 		602582C6296FDCD8003ACD61 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602582C5296FDCD8003ACD61 /* MainVC.swift */; };
 		602582C82970D8D8003ACD61 /* TodoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602582C72970D8D8003ACD61 /* TodoCell.xib */; };
 		602582CA2970DB47003ACD61 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602582C92970DB47003ACD61 /* TodoCell.swift */; };
+		60D7EC742970EDDA00DA07CA /* UISearchBarWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D7EC732970EDDA00DA07CA /* UISearchBarWrapper.swift */; };
+		60D7EC762970F06D00DA07CA /* TodoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D7EC752970F06D00DA07CA /* TodoRow.swift */; };
+		60DC88EB2970E25800B39B43 /* TodosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DC88EA2970E25800B39B43 /* TodosView.swift */; };
+		60DC88ED2970E56B00B39B43 /* Button+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DC88EC2970E56B00B39B43 /* Button+Style.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		602582C5296FDCD8003ACD61 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		602582C72970D8D8003ACD61 /* TodoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoCell.xib; sourceTree = "<group>"; };
 		602582C92970DB47003ACD61 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
+		60D7EC732970EDDA00DA07CA /* UISearchBarWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarWrapper.swift; sourceTree = "<group>"; };
+		60D7EC752970F06D00DA07CA /* TodoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRow.swift; sourceTree = "<group>"; };
+		60DC88EA2970E25800B39B43 /* TodosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosView.swift; sourceTree = "<group>"; };
+		60DC88EC2970E56B00B39B43 /* Button+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Style.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +67,12 @@
 		602582B1296FDA44003ACD61 /* TodoAppTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				60D7EC722970EDBF00DA07CA /* SwiftUI */,
+				60DC88EE2970E57700B39B43 /* Styles */,
 				602582C0296FDC66003ACD61 /* UIKit */,
 				602582B2296FDA44003ACD61 /* TodoAppTutorialApp.swift */,
+				60DC88EA2970E25800B39B43 /* TodosView.swift */,
+				60D7EC752970F06D00DA07CA /* TodoRow.swift */,
 				602582B4296FDA44003ACD61 /* ContentView.swift */,
 				602582B6296FDA47003ACD61 /* Assets.xcassets */,
 				602582B8296FDA47003ACD61 /* Preview Content */,
@@ -86,6 +98,22 @@
 			);
 			name = UIKit;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		60D7EC722970EDBF00DA07CA /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				60D7EC732970EDDA00DA07CA /* UISearchBarWrapper.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		60DC88EE2970E57700B39B43 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				60DC88EC2970E56B00B39B43 /* Button+Style.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,9 +188,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60DC88EB2970E25800B39B43 /* TodosView.swift in Sources */,
 				602582B5296FDA44003ACD61 /* ContentView.swift in Sources */,
 				602582C6296FDCD8003ACD61 /* MainVC.swift in Sources */,
+				60DC88ED2970E56B00B39B43 /* Button+Style.swift in Sources */,
 				602582B3296FDA44003ACD61 /* TodoAppTutorialApp.swift in Sources */,
+				60D7EC742970EDDA00DA07CA /* UISearchBarWrapper.swift in Sources */,
+				60D7EC762970F06D00DA07CA /* TodoRow.swift in Sources */,
 				602582CA2970DB47003ACD61 /* TodoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
