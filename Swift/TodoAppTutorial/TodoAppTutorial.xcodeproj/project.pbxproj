@@ -15,6 +15,9 @@
 		602582C6296FDCD8003ACD61 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602582C5296FDCD8003ACD61 /* MainVC.swift */; };
 		602582C82970D8D8003ACD61 /* TodoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602582C72970D8D8003ACD61 /* TodoCell.xib */; };
 		602582CA2970DB47003ACD61 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602582C92970DB47003ACD61 /* TodoCell.swift */; };
+		6057BCAE29778E1D0031AD79 /* TodosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6057BCAD29778E1D0031AD79 /* TodosAPI.swift */; };
+		6057BCB02977925C0031AD79 /* TodosVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6057BCAF2977925C0031AD79 /* TodosVM.swift */; };
+		6057BCB3297796D50031AD79 /* TodosResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6057BCB2297796D50031AD79 /* TodosResponse.swift */; };
 		60D7EC742970EDDA00DA07CA /* UISearchBarWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D7EC732970EDDA00DA07CA /* UISearchBarWrapper.swift */; };
 		60D7EC762970F06D00DA07CA /* TodoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D7EC752970F06D00DA07CA /* TodoRow.swift */; };
 		60DC88EB2970E25800B39B43 /* TodosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DC88EA2970E25800B39B43 /* TodosView.swift */; };
@@ -31,6 +34,9 @@
 		602582C5296FDCD8003ACD61 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		602582C72970D8D8003ACD61 /* TodoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoCell.xib; sourceTree = "<group>"; };
 		602582C92970DB47003ACD61 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
+		6057BCAD29778E1D0031AD79 /* TodosAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosAPI.swift; sourceTree = "<group>"; };
+		6057BCAF2977925C0031AD79 /* TodosVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosVM.swift; sourceTree = "<group>"; };
+		6057BCB2297796D50031AD79 /* TodosResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosResponse.swift; sourceTree = "<group>"; };
 		60D7EC732970EDDA00DA07CA /* UISearchBarWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarWrapper.swift; sourceTree = "<group>"; };
 		60D7EC752970F06D00DA07CA /* TodoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRow.swift; sourceTree = "<group>"; };
 		60DC88EA2970E25800B39B43 /* TodosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosView.swift; sourceTree = "<group>"; };
@@ -67,6 +73,8 @@
 		602582B1296FDA44003ACD61 /* TodoAppTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				6057BCB1297796B50031AD79 /* Data */,
+				6057BCAC29778E0E0031AD79 /* API */,
 				60D7EC722970EDBF00DA07CA /* SwiftUI */,
 				60DC88EE2970E57700B39B43 /* Styles */,
 				602582C0296FDC66003ACD61 /* UIKit */,
@@ -100,9 +108,26 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		6057BCAC29778E0E0031AD79 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				6057BCAD29778E1D0031AD79 /* TodosAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		6057BCB1297796B50031AD79 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6057BCB2297796D50031AD79 /* TodosResponse.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		60D7EC722970EDBF00DA07CA /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				6057BCAF2977925C0031AD79 /* TodosVM.swift */,
 				60D7EC732970EDDA00DA07CA /* UISearchBarWrapper.swift */,
 			);
 			path = SwiftUI;
@@ -188,7 +213,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6057BCB02977925C0031AD79 /* TodosVM.swift in Sources */,
+				6057BCAE29778E1D0031AD79 /* TodosAPI.swift in Sources */,
 				60DC88EB2970E25800B39B43 /* TodosView.swift in Sources */,
+				6057BCB3297796D50031AD79 /* TodosResponse.swift in Sources */,
 				602582B5296FDA44003ACD61 /* ContentView.swift in Sources */,
 				602582C6296FDCD8003ACD61 /* MainVC.swift in Sources */,
 				60DC88ED2970E56B00B39B43 /* Button+Style.swift in Sources */,
