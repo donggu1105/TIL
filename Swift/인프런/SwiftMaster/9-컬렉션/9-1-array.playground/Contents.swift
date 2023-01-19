@@ -385,7 +385,7 @@ nums = [10, 11, 12, 13, 14]
 
 
 for tuple in nums.enumerated() {
-    //print(tuple)
+    print(tuple)
     print("\(tuple.0) - \(tuple.1)")
 }
 
