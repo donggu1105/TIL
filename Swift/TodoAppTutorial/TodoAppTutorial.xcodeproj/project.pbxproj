@@ -18,6 +18,8 @@
 		6057BCAE29778E1D0031AD79 /* TodosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6057BCAD29778E1D0031AD79 /* TodosAPI.swift */; };
 		6057BCB02977925C0031AD79 /* TodosVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6057BCAF2977925C0031AD79 /* TodosVM.swift */; };
 		6057BCB3297796D50031AD79 /* TodosResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6057BCB2297796D50031AD79 /* TodosResponse.swift */; };
+		609123D3297A6F6900F497C7 /* URL+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609123D2297A6F6900F497C7 /* URL+Ext.swift */; };
+		609123D6297A71B200F497C7 /* MultipartForm in Frameworks */ = {isa = PBXBuildFile; productRef = 609123D5297A71B200F497C7 /* MultipartForm */; };
 		60D7EC742970EDDA00DA07CA /* UISearchBarWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D7EC732970EDDA00DA07CA /* UISearchBarWrapper.swift */; };
 		60D7EC762970F06D00DA07CA /* TodoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D7EC752970F06D00DA07CA /* TodoRow.swift */; };
 		60DC88EB2970E25800B39B43 /* TodosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DC88EA2970E25800B39B43 /* TodosView.swift */; };
@@ -37,6 +39,7 @@
 		6057BCAD29778E1D0031AD79 /* TodosAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosAPI.swift; sourceTree = "<group>"; };
 		6057BCAF2977925C0031AD79 /* TodosVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosVM.swift; sourceTree = "<group>"; };
 		6057BCB2297796D50031AD79 /* TodosResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosResponse.swift; sourceTree = "<group>"; };
+		609123D2297A6F6900F497C7 /* URL+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Ext.swift"; sourceTree = "<group>"; };
 		60D7EC732970EDDA00DA07CA /* UISearchBarWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarWrapper.swift; sourceTree = "<group>"; };
 		60D7EC752970F06D00DA07CA /* TodoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRow.swift; sourceTree = "<group>"; };
 		60DC88EA2970E25800B39B43 /* TodosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosView.swift; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				609123D6297A71B200F497C7 /* MultipartForm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,15 +77,14 @@
 		602582B1296FDA44003ACD61 /* TodoAppTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				609123D1297A6F5200F497C7 /* Extensions */,
 				6057BCB1297796B50031AD79 /* Data */,
 				6057BCAC29778E0E0031AD79 /* API */,
 				60D7EC722970EDBF00DA07CA /* SwiftUI */,
 				60DC88EE2970E57700B39B43 /* Styles */,
 				602582C0296FDC66003ACD61 /* UIKit */,
+				6057BCAF2977925C0031AD79 /* TodosVM.swift */,
 				602582B2296FDA44003ACD61 /* TodoAppTutorialApp.swift */,
-				60DC88EA2970E25800B39B43 /* TodosView.swift */,
-				60D7EC752970F06D00DA07CA /* TodoRow.swift */,
-				602582B4296FDA44003ACD61 /* ContentView.swift */,
 				602582B6296FDA47003ACD61 /* Assets.xcassets */,
 				602582B8296FDA47003ACD61 /* Preview Content */,
 			);
@@ -124,10 +127,20 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		609123D1297A6F5200F497C7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				609123D2297A6F6900F497C7 /* URL+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		60D7EC722970EDBF00DA07CA /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				6057BCAF2977925C0031AD79 /* TodosVM.swift */,
+				602582B4296FDA44003ACD61 /* ContentView.swift */,
+				60D7EC752970F06D00DA07CA /* TodoRow.swift */,
+				60DC88EA2970E25800B39B43 /* TodosView.swift */,
 				60D7EC732970EDDA00DA07CA /* UISearchBarWrapper.swift */,
 			);
 			path = SwiftUI;
@@ -157,6 +170,9 @@
 			dependencies = (
 			);
 			name = TodoAppTutorial;
+			packageProductDependencies = (
+				609123D5297A71B200F497C7 /* MultipartForm */,
+			);
 			productName = TodoAppTutorial;
 			productReference = 602582AF296FDA44003ACD61 /* TodoAppTutorial.app */;
 			productType = "com.apple.product-type.application";
@@ -185,6 +201,9 @@
 				Base,
 			);
 			mainGroup = 602582A6296FDA44003ACD61;
+			packageReferences = (
+				609123D4297A71B200F497C7 /* XCRemoteSwiftPackageReference "MultipartForm" */,
+			);
 			productRefGroup = 602582B0296FDA44003ACD61 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -220,6 +239,7 @@
 				602582B5296FDA44003ACD61 /* ContentView.swift in Sources */,
 				602582C6296FDCD8003ACD61 /* MainVC.swift in Sources */,
 				60DC88ED2970E56B00B39B43 /* Button+Style.swift in Sources */,
+				609123D3297A6F6900F497C7 /* URL+Ext.swift in Sources */,
 				602582B3296FDA44003ACD61 /* TodoAppTutorialApp.swift in Sources */,
 				60D7EC742970EDDA00DA07CA /* UISearchBarWrapper.swift in Sources */,
 				60D7EC762970F06D00DA07CA /* TodoRow.swift in Sources */,
@@ -426,6 +446,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		609123D4297A71B200F497C7 /* XCRemoteSwiftPackageReference "MultipartForm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/davbeck/MultipartForm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		609123D5297A71B200F497C7 /* MultipartForm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 609123D4297A71B200F497C7 /* XCRemoteSwiftPackageReference "MultipartForm" */;
+			productName = MultipartForm;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 602582A7296FDA44003ACD61 /* Project object */;
 }
