@@ -20,6 +20,8 @@
 		6057BCB3297796D50031AD79 /* TodosResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6057BCB2297796D50031AD79 /* TodosResponse.swift */; };
 		609123D3297A6F6900F497C7 /* URL+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609123D2297A6F6900F497C7 /* URL+Ext.swift */; };
 		609123D6297A71B200F497C7 /* MultipartForm in Frameworks */ = {isa = PBXBuildFile; productRef = 609123D5297A71B200F497C7 /* MultipartForm */; };
+		60A9A04C2980F779003FCA55 /* URLRequest+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9A04B2980F779003FCA55 /* URLRequest+Ext.swift */; };
+		60A9A04E298101C5003FCA55 /* TodosAPI+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9A04D298101C5003FCA55 /* TodosAPI+Closure.swift */; };
 		60D7EC742970EDDA00DA07CA /* UISearchBarWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D7EC732970EDDA00DA07CA /* UISearchBarWrapper.swift */; };
 		60D7EC762970F06D00DA07CA /* TodoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D7EC752970F06D00DA07CA /* TodoRow.swift */; };
 		60DC88EB2970E25800B39B43 /* TodosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DC88EA2970E25800B39B43 /* TodosView.swift */; };
@@ -40,6 +42,8 @@
 		6057BCAF2977925C0031AD79 /* TodosVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosVM.swift; sourceTree = "<group>"; };
 		6057BCB2297796D50031AD79 /* TodosResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosResponse.swift; sourceTree = "<group>"; };
 		609123D2297A6F6900F497C7 /* URL+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Ext.swift"; sourceTree = "<group>"; };
+		60A9A04B2980F779003FCA55 /* URLRequest+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Ext.swift"; sourceTree = "<group>"; };
+		60A9A04D298101C5003FCA55 /* TodosAPI+Closure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodosAPI+Closure.swift"; sourceTree = "<group>"; };
 		60D7EC732970EDDA00DA07CA /* UISearchBarWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarWrapper.swift; sourceTree = "<group>"; };
 		60D7EC752970F06D00DA07CA /* TodoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRow.swift; sourceTree = "<group>"; };
 		60DC88EA2970E25800B39B43 /* TodosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosView.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				6057BCAD29778E1D0031AD79 /* TodosAPI.swift */,
+				60A9A04D298101C5003FCA55 /* TodosAPI+Closure.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				609123D2297A6F6900F497C7 /* URL+Ext.swift */,
+				60A9A04B2980F779003FCA55 /* URLRequest+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -236,7 +242,9 @@
 				6057BCAE29778E1D0031AD79 /* TodosAPI.swift in Sources */,
 				60DC88EB2970E25800B39B43 /* TodosView.swift in Sources */,
 				6057BCB3297796D50031AD79 /* TodosResponse.swift in Sources */,
+				60A9A04C2980F779003FCA55 /* URLRequest+Ext.swift in Sources */,
 				602582B5296FDA44003ACD61 /* ContentView.swift in Sources */,
+				60A9A04E298101C5003FCA55 /* TodosAPI+Closure.swift in Sources */,
 				602582C6296FDCD8003ACD61 /* MainVC.swift in Sources */,
 				60DC88ED2970E56B00B39B43 /* Button+Style.swift in Sources */,
 				609123D3297A6F6900F497C7 /* URL+Ext.swift in Sources */,

@@ -15,21 +15,85 @@ class TodosVM: ObservableObject {
     init() {
         print(#fileID, #function, #line, "- ")
         
-        TodosAPI.addATodo(title: "기릿234232342", isDone: false){ [weak self] result in
+        TodosAPI.deleteSelectedTodos(selectedTodoIds: [2124]) { [weak self] deletedTodos in
+        }
         
-                    guard let self = self else {return}
+//        TodosAPI.addATodoAndFetchTodos(title: "!2312312") { [weak self] result in
+//
+//            guard let self = self else {return}
+//
+//            switch result {
+//            case .success(let response):
+//                print(#fileID, #function, #line, "- ")
+//                print(response)
+//            case .failure(let failure):
+//                print(#fileID, #function, #line, "- ")
+//                print(failure)
+//                self.handleError(failure)
+//            }
+//        }
         
-                    switch result {
-                    case .success(let response):
-                        print(#fileID, #function, #line, "- ")
-                        print(response)
-                    case .failure(let failure):
-                        print(#fileID, #function, #line, "- ")
-                        print(failure)
-                        self.handleError(failure)
-                    }
-                }
         
+//        TodosAPI.deleteTodo(id:2128){ [weak self] result in
+//
+//                    guard let self = self else {return}
+//
+//                    switch result {
+//                    case .success(let response):
+//                        print(#fileID, #function, #line, "- ")
+//                        print(response)
+//                    case .failure(let failure):
+//                        print(#fileID, #function, #line, "- ")
+//                        print(failure)
+//                        self.handleError(failure)
+//                    }
+//                }
+        
+//        TodosAPI.editTodo(id:2129, title: "ffff", isDone: false){ [weak self] result in
+//
+//                    guard let self = self else {return}
+//
+//                    switch result {
+//                    case .success(let response):
+//                        print(#fileID, #function, #line, "- ")
+//                        print(response)
+//                    case .failure(let failure):
+//                        print(#fileID, #function, #line, "- ")
+//                        print(failure)
+//                        self.handleError(failure)
+//                    }
+//                }
+        
+//        TodosAPI.editTodoJson(id:2129, title: "허허허허허허헣", isDone: false){ [weak self] result in
+//
+//                    guard let self = self else {return}
+//
+//                    switch result {
+//                    case .success(let response):
+//                        print(#fileID, #function, #line, "- ")
+//                        print(response)
+//                    case .failure(let failure):
+//                        print(#fileID, #function, #line, "- ")
+//                        print(failure)
+//                        self.handleError(failure)
+//                    }
+//                }
+        
+//        TodosAPI.addATodo(title: "기릿234232342", isDone: false){ [weak self] result in
+//
+//                    guard let self = self else {return}
+//
+//                    switch result {
+//                    case .success(let response):
+//                        print(#fileID, #function, #line, "- ")
+//                        print(response)
+//                    case .failure(let failure):
+//                        print(#fileID, #function, #line, "- ")
+//                        print(failure)
+//                        self.handleError(failure)
+//                    }
+//                }
+//
 //        TodosAPI.searchTodos(searchTerm: "빡코딩") { [weak self] result in
 //                guard let self = self else {return}
 //
