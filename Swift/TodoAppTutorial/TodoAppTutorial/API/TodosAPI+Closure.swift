@@ -622,22 +622,29 @@ extension TodosAPI {
     /// - Parameters:
     ///   - selectedTodoIds: 선택된 todos
     ///   - completion: 실제 삭제가 완료된 아이디들
-    static func deleteSelectedTodos(selectedTodoIds: [Int], completion: @escaping ([Int]) -> Void) {
+    static func fetchSelectedTodos(selectedTodoIds: [Int], completion: @escaping (Result<[Todo], ApiError>) -> Void) {
         
         let group = DispatchGroup()
-        var deletedTodoIds: [Int] = []
+        
+        // 가져온 할일들
+        var fetchedTodos: [Todo] = [Todo]()
+        // 에러들
+        var apiErros: [ApiError] = []
+        // 응답 결과들
+        var apiResults = [Int : Result<BaseResponse<Todo>, ApiError>]()
+        
         selectedTodoIds.forEach { id in
             group.enter()
             
             self.deleteTodo(id: id) { result in
                 switch result {
                 case .success(let response):
-                    if let todoId = response.data?.id {
-                        print("todoId : \(todoId)")
-                        deletedTodoIds.append(todoId)
+                    if let todo = response.data {
+                        fetchedTodos.append(todo)
                     }
                     
                 case .failure(let failure):
+                    apiErros.append(failure)
                     print("inner deleteATodo - failure: \(failure)")
                 }
                 group.leave()
@@ -647,8 +654,14 @@ extension TodosAPI {
         
         group.notify(queue: .main) {
             print("모든 api 완료")
-            print("deletedTodoIds : \(deletedTodoIds)")
-            completion(deletedTodoIds)
+            // error 있을떄
+            if !apiErros.isEmpty {
+                if let firstError = apiErros.first {
+                    completion(.failure(firstError))
+                    return
+                }
+            }
+            completion(.success(fetchedTodos))
         }
     }
 }

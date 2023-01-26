@@ -15,7 +15,15 @@ class TodosVM: ObservableObject {
     init() {
         print(#fileID, #function, #line, "- ")
         
-        TodosAPI.deleteSelectedTodos(selectedTodoIds: [2124]) { [weak self] deletedTodos in
+        TodosAPI.fetchSelectedTodos(selectedTodoIds: [2116]) { [weak self] result in
+                
+            switch result {
+            case .success(let data):
+                print(data)
+            case .failure(let failure):
+                print(failure)
+                
+            }
         }
         
 //        TodosAPI.addATodoAndFetchTodos(title: "!2312312") { [weak self] result in
