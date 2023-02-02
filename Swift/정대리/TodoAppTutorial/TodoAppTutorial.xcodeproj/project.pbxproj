@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070EC2F2298907680094E3F4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 070EC2F1298907680094E3F4 /* RxCocoa */; };
+		070EC2F4298907680094E3F4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 070EC2F3298907680094E3F4 /* RxSwift */; };
+		070EC2F6298907840094E3F4 /* TodosAPI+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070EC2F5298907840094E3F4 /* TodosAPI+Rx.swift */; };
 		602582B3296FDA44003ACD61 /* TodoAppTutorialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602582B2296FDA44003ACD61 /* TodoAppTutorialApp.swift */; };
 		602582B5296FDA44003ACD61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602582B4296FDA44003ACD61 /* ContentView.swift */; };
 		602582B7296FDA47003ACD61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 602582B6296FDA47003ACD61 /* Assets.xcassets */; };
@@ -29,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		070EC2F5298907840094E3F4 /* TodosAPI+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodosAPI+Rx.swift"; sourceTree = "<group>"; };
 		602582AF296FDA44003ACD61 /* TodoAppTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoAppTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		602582B2296FDA44003ACD61 /* TodoAppTutorialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoAppTutorialApp.swift; sourceTree = "<group>"; };
 		602582B4296FDA44003ACD61 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070EC2F4298907680094E3F4 /* RxSwift in Frameworks */,
+				070EC2F2298907680094E3F4 /* RxCocoa in Frameworks */,
 				609123D6297A71B200F497C7 /* MultipartForm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,6 +126,7 @@
 			children = (
 				6057BCAD29778E1D0031AD79 /* TodosAPI.swift */,
 				60A9A04D298101C5003FCA55 /* TodosAPI+Closure.swift */,
+				070EC2F5298907840094E3F4 /* TodosAPI+Rx.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -178,6 +185,8 @@
 			name = TodoAppTutorial;
 			packageProductDependencies = (
 				609123D5297A71B200F497C7 /* MultipartForm */,
+				070EC2F1298907680094E3F4 /* RxCocoa */,
+				070EC2F3298907680094E3F4 /* RxSwift */,
 			);
 			productName = TodoAppTutorial;
 			productReference = 602582AF296FDA44003ACD61 /* TodoAppTutorial.app */;
@@ -209,6 +218,7 @@
 			mainGroup = 602582A6296FDA44003ACD61;
 			packageReferences = (
 				609123D4297A71B200F497C7 /* XCRemoteSwiftPackageReference "MultipartForm" */,
+				070EC2F0298907680094E3F4 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 602582B0296FDA44003ACD61 /* Products */;
 			projectDirPath = "";
@@ -247,6 +257,7 @@
 				60A9A04E298101C5003FCA55 /* TodosAPI+Closure.swift in Sources */,
 				602582C6296FDCD8003ACD61 /* MainVC.swift in Sources */,
 				60DC88ED2970E56B00B39B43 /* Button+Style.swift in Sources */,
+				070EC2F6298907840094E3F4 /* TodosAPI+Rx.swift in Sources */,
 				609123D3297A6F6900F497C7 /* URL+Ext.swift in Sources */,
 				602582B3296FDA44003ACD61 /* TodoAppTutorialApp.swift in Sources */,
 				60D7EC742970EDDA00DA07CA /* UISearchBarWrapper.swift in Sources */,
@@ -456,6 +467,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		070EC2F0298907680094E3F4 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		609123D4297A71B200F497C7 /* XCRemoteSwiftPackageReference "MultipartForm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/davbeck/MultipartForm";
@@ -467,6 +486,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		070EC2F1298907680094E3F4 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 070EC2F0298907680094E3F4 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		070EC2F3298907680094E3F4 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 070EC2F0298907680094E3F4 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
 		609123D5297A71B200F497C7 /* MultipartForm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 609123D4297A71B200F497C7 /* XCRemoteSwiftPackageReference "MultipartForm" */;

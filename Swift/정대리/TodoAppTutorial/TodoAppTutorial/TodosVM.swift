@@ -7,146 +7,32 @@
 
 import Foundation
 import Combine
-
+import RxSwift
+import RxCocoa
+import RxRelay
 
 // ObservableObject 해야 변경에 대한 감지 가능
 class TodosVM: ObservableObject {
     
+    var disposeBag = DisposeBag()
+    
     init() {
         print(#fileID, #function, #line, "- ")
         
-        TodosAPI.fetchSelectedTodos(selectedTodoIds: [2116]) { [weak self] result in
+        TodosAPI.fetchTodosWithObservable(page: 111)
+            .retryWithDelayAndCondition(retryCount: 3, delay: 2, when: {err in
+                print("err : \(err)")
                 
-            switch result {
-            case .success(let data):
-                print(data)
-            case .failure(let failure):
-                print(failure)
-                
-            }
-        }
+                if case TodosAPI.ApiError.unauthorized = err {
+                    return true
+                }
+                return false
+            })
+            .subscribe(onNext: {
+                print("onNext : \($0)")
+            })
+            .disposed(by: disposeBag)
         
-//        TodosAPI.addATodoAndFetchTodos(title: "!2312312") { [weak self] result in
-//
-//            guard let self = self else {return}
-//
-//            switch result {
-//            case .success(let response):
-//                print(#fileID, #function, #line, "- ")
-//                print(response)
-//            case .failure(let failure):
-//                print(#fileID, #function, #line, "- ")
-//                print(failure)
-//                self.handleError(failure)
-//            }
-//        }
-        
-        
-//        TodosAPI.deleteTodo(id:2128){ [weak self] result in
-//
-//                    guard let self = self else {return}
-//
-//                    switch result {
-//                    case .success(let response):
-//                        print(#fileID, #function, #line, "- ")
-//                        print(response)
-//                    case .failure(let failure):
-//                        print(#fileID, #function, #line, "- ")
-//                        print(failure)
-//                        self.handleError(failure)
-//                    }
-//                }
-        
-//        TodosAPI.editTodo(id:2129, title: "ffff", isDone: false){ [weak self] result in
-//
-//                    guard let self = self else {return}
-//
-//                    switch result {
-//                    case .success(let response):
-//                        print(#fileID, #function, #line, "- ")
-//                        print(response)
-//                    case .failure(let failure):
-//                        print(#fileID, #function, #line, "- ")
-//                        print(failure)
-//                        self.handleError(failure)
-//                    }
-//                }
-        
-//        TodosAPI.editTodoJson(id:2129, title: "허허허허허허헣", isDone: false){ [weak self] result in
-//
-//                    guard let self = self else {return}
-//
-//                    switch result {
-//                    case .success(let response):
-//                        print(#fileID, #function, #line, "- ")
-//                        print(response)
-//                    case .failure(let failure):
-//                        print(#fileID, #function, #line, "- ")
-//                        print(failure)
-//                        self.handleError(failure)
-//                    }
-//                }
-        
-//        TodosAPI.addATodo(title: "기릿234232342", isDone: false){ [weak self] result in
-//
-//                    guard let self = self else {return}
-//
-//                    switch result {
-//                    case .success(let response):
-//                        print(#fileID, #function, #line, "- ")
-//                        print(response)
-//                    case .failure(let failure):
-//                        print(#fileID, #function, #line, "- ")
-//                        print(failure)
-//                        self.handleError(failure)
-//                    }
-//                }
-//
-//        TodosAPI.searchTodos(searchTerm: "빡코딩") { [weak self] result in
-//                guard let self = self else {return}
-//
-//                switch result {
-//                case .success(let response):
-//                    print(#fileID, #function, #line, "- ")
-//                    print(response)
-//                case .failure(let failure):
-//                    print(#fileID, #function, #line, "- ")
-//                    print(failure)
-//                    self.handleError(failure)
-//                }
-//        }
-        
-//        TodosAPI.fetchATodo(id: 124) { [weak self] result in
-//
-//            guard let self = self else {return}
-//
-//            switch result {
-//            case .success(let response):
-//                print(#fileID, #function, #line, "- ")
-//                print(response)
-//            case .failure(let failure):
-//                print(#fileID, #function, #line, "- ")
-//                print(failure)
-//                self.handleError(failure)
-//            }
-//        }
-        
-        
-//        TodosAPI.fetchTodos { [weak self] result in
-//
-//            guard let self = self else {return}
-//
-//            switch result {
-//            case .success(let todosResponse):
-//                print(#fileID, #function, #line, "- ")
-//                print(todosResponse)
-//            case .failure(let failure):
-//                print(#fileID, #function, #line, "- ")
-//                print(failure)
-//                self.handleError(failure)
-//            }
-//
-//        }
     }
 
     

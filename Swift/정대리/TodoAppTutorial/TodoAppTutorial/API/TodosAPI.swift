@@ -6,6 +6,7 @@
 //
 import MultipartForm
 import Foundation
+
 // API 완성된 값만 전달하는 enum 클래스
 enum TodosAPI {
 
@@ -17,30 +18,25 @@ enum TodosAPI {
     #endif
     
     
-    enum ApiError: Error {
-        case parsingError
+    enum ApiError : Error {
         case noContent
         case decodingError
-        case jsonEncodingError
+        case jsonEncoding
+        case unauthorized
+        case notAllowedUrl
         case badStatus(code: Int)
         case unknown(_ err: Error?)
-        case unauthorized
-        case notAllowedURL
         
-        
-        
-        var info: String {
+        var info : String {
             switch self {
-            case .noContent : return "데이터가 없습니다."
-            case .decodingError : return "디코딩 에러입니다."
-            case .unauthorized : return "인증되지 않은 사용자 입니다."
-            case .badStatus(let code): return "상태코드 : \(code)"
-            case .unknown(let error): return "알 수 없는 에러입니다. \(error)"
-            case .notAllowedURL: return "올바른 URL 형식이 아닙니다."
-            case .jsonEncodingError: return "유효한 json 형식이 아닙니다."
-            default: return ""
+            case .noContent :           return "데이터가 없습니다."
+            case .decodingError :       return "디코딩 에러입니다."
+            case .jsonEncoding :        return "유효한 json 형식이 아닙니다."
+            case .unauthorized :        return "인증되지 않은 사용자 입니다."
+            case .notAllowedUrl :       return "올바른 URL 형식이 아닙니다."
+            case let .badStatus(code):  return "에러 상태코드 : \(code)"
+            case .unknown(let err):     return "알 수 없는 에러입니다 \n \(err)"
             }
-            
         }
     }
 //    

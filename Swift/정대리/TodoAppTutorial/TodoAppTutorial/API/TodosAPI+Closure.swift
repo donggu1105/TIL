@@ -17,7 +17,7 @@ extension TodosAPI {
 
         // 1. urlReqeust 만들기
         let urlString = baseURL + "/todos?" + "page=\(page)"
-        guard let url = URL(string: urlString) else {return completion(.failure(ApiError.notAllowedURL))}
+        guard let url = URL(string: urlString) else {return completion(.failure(ApiError.notAllowedUrl))}
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
         urlRequest.addValue("application/json", forHTTPHeaderField: "accept")
@@ -78,7 +78,7 @@ extension TodosAPI {
 
         // 1. urlReqeust 만들기
         let urlString = baseURL + "/todos/" + "\(id)"
-        guard let url = URL(string: urlString) else {return completion(.failure(ApiError.notAllowedURL))}
+        guard let url = URL(string: urlString) else {return completion(.failure(ApiError.notAllowedUrl))}
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
         urlRequest.addValue("application/json", forHTTPHeaderField: "accept")
@@ -146,7 +146,7 @@ extension TodosAPI {
 //            URLQueryItem(name: "query", value: searchTerm)
 //        ]
 
-        guard let url = requestUrl else {return completion(.failure(ApiError.notAllowedURL))}
+        guard let url = requestUrl else {return completion(.failure(ApiError.notAllowedUrl))}
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
         urlRequest.addValue("application/json", forHTTPHeaderField: "accept")
@@ -218,7 +218,7 @@ extension TodosAPI {
         // 1. urlReqeust 만들기
         let urlString = baseURL + "/todos"
         
-        guard let url = URL(string: urlString) else {return completion(.failure(ApiError.notAllowedURL))}
+        guard let url = URL(string: urlString) else {return completion(.failure(ApiError.notAllowedUrl))}
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
@@ -295,7 +295,7 @@ extension TodosAPI {
         // 1. urlReqeust 만들기
         let urlString = baseURL + "/todos-json"
         
-        guard let url = URL(string: urlString) else {return completion(.failure(ApiError.notAllowedURL))}
+        guard let url = URL(string: urlString) else {return completion(.failure(ApiError.notAllowedUrl))}
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
@@ -310,7 +310,7 @@ extension TodosAPI {
             urlRequest.httpBody = jsonData
 
         } catch {
-            return completion(.failure(ApiError.jsonEncodingError))
+            return completion(.failure(ApiError.jsonEncoding))
         }
         
 
@@ -379,7 +379,7 @@ extension TodosAPI {
         // 1. urlReqeust 만들기
         let urlString = baseURL + "/todos-json/\(id)"
         
-        guard let url = URL(string: urlString) else {return completion(.failure(ApiError.notAllowedURL))}
+        guard let url = URL(string: urlString) else {return completion(.failure(ApiError.notAllowedUrl))}
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
@@ -394,7 +394,7 @@ extension TodosAPI {
             urlRequest.httpBody = jsonData
 
         } catch {
-            return completion(.failure(ApiError.jsonEncodingError))
+            return completion(.failure(ApiError.jsonEncoding))
         }
         
 
@@ -463,7 +463,7 @@ extension TodosAPI {
         // 1. urlReqeust 만들기
         let urlString = baseURL + "/todos/\(id)"
         
-        guard let url = URL(string: urlString) else {return completion(.failure(ApiError.notAllowedURL))}
+        guard let url = URL(string: urlString) else {return completion(.failure(ApiError.notAllowedUrl))}
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "PUT"
@@ -538,7 +538,7 @@ extension TodosAPI {
         // 1. urlReqeust 만들기
         let urlString = baseURL + "/todos/\(id)"
         
-        guard let url = URL(string: urlString) else {return completion(.failure(ApiError.notAllowedURL))}
+        guard let url = URL(string: urlString) else {return completion(.failure(ApiError.notAllowedUrl))}
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "DELETE"
