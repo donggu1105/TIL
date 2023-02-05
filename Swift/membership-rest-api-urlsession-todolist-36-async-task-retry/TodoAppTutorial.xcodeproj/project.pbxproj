@@ -158,7 +158,7 @@
 				F292479C2929ECAE0083F0B7 /* Data */,
 				F29247952929E70F0083F0B7 /* API */,
 				F2A438F5291D350E006402B0 /* Styles */,
-				F2C9BF75291BE34B003BC36C /* UIKit */,
+				F2C9BF75291BE34B003BC36C /* Vi */,
 				F2A438F8291D3904006402B0 /* SwiftUi */,
 				F292479A2929EACD0083F0B7 /* TodosVM.swift */,
 				F2C9BF66291BE21B003BC36C /* TodoAppTutorialApp.swift */,
@@ -176,7 +176,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		F2C9BF75291BE34B003BC36C /* UIKit */ = {
+		F2C9BF75291BE34B003BC36C /* Vi */ = {
 			isa = PBXGroup;
 			children = (
 				070EC2F9298B3CC70094E3F4 /* MainVC.storyboard */,
@@ -184,7 +184,7 @@
 				F2A438EF291CE4D6006402B0 /* TodoCell.xib */,
 				F2A438F1291CE6DA006402B0 /* TodoCell.swift */,
 			);
-			path = UIKit;
+			path = Vi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

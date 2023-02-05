@@ -20,22 +20,19 @@ class Child: Parent {
             super.a = newValue
         }
     }
-    
     var b = 1
-
-    
 }
 
-var parent = Parent()
-var child = Child()
+var parent = Parent() // 인스턴스1
+var child = Child() // 인스턴스2
 
 
-print(parent.a) // ?
+print(parent.a) // 인스턴스1 .a => 10
 parent.a = 30
-print(child.a) // ?
+print(child.a) // 인스턴스2 .a => 부모 a * 2
 
 
-// quiz 2 클래스와 구조체 성능 차이가 일어나는 이유에대해서 아는만큼 상세히 말해보세요.
+// quiz 2 클래스와 구조체 성능 차이 가 일어나는 이유에대해서 아는만큼 상세히 말해보세요.
 
 
 // 답변 3가지
@@ -44,14 +41,18 @@ print(child.a) // ?
 
 
 
+class A {}
+class B {}
 
+var b = B() // A rc + 1, B rc + 1
 
+// rc
+var a = A() // 메모리가 힙에 올라갈떄 Rc (reference count) + 1 reference count => 0 메모리에서 해제 swift 메모리 object c
+// retain rc + 1
+// release rc - 1
 
-
-
-
-
-
+// deinit()  rc = 0 메모리에서 해제 rc = 0
+// JVM 자바가상머신 -> 자동적으로 청소 메모리찌꺼끼 제거
 
 
 
@@ -60,7 +61,7 @@ print(child.a) // ?
 // 반면에 힙영역은 전체 영역중에서 빈메모리공간을 찾아야함 스캔해야됨 그다음에 할당 (힙 메모리영역을 스캔하는데 비용이듬) : 힙영역 스캔 -> 데이터 할당 -> 해당 메모리주소 리턴해서 스택의 변수에다가 할당
 
 // 2. 함수의 실행 측면
-// 구조체의경우 direct 디스패치로 움직임 (함수실행할때 실행할 함수의 주소를 바로 찾아가서 실행)
+//  direct 디구조체의경우스패치로 움직임 (함수실행할때 실행할 함수의 주소를 바로 찾아가서 실행)
 // 클래스는 메소드들을 테이블 배열로 관리하고 그곳에있는 함수의 주소를 찾아서 실행하는 과정
 
 // 3. 메모리관리 (ARC) 측면
