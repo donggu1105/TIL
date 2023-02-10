@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TodosVM {
+class TodosVM_Clousre {
     
     // 가공된 최종 데이터
     var todos : [Todo] = [] {

@@ -8,6 +8,9 @@
 import Foundation
 import UIKit
 import SwiftUI
+import RxSwift
+import RxCocoa
+import RxRelay
 
 
 class MainVC: UIViewController{
@@ -24,7 +27,9 @@ class MainVC: UIViewController{
     
     var todos : [Todo] = []
     
-    var todosVM: TodosVM = TodosVM()
+    var todosVM: TodosVM_Rx = TodosVM_Rx()
+    
+    var disposeBag = DisposeBag()
     
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -95,7 +100,7 @@ class MainVC: UIViewController{
         
         // 테이블뷰 설정
         self.myTableView.register(TodoCell.uinib, forCellReuseIdentifier: TodoCell.reuseIdentifier)
-        self.myTableView.dataSource = self
+//        self.myTableView.dataSource = self
         self.myTableView.delegate = self
         
         self.myTableView.refreshControl = refreshControl
@@ -108,14 +113,45 @@ class MainVC: UIViewController{
         
         // ===
         
-        // 뷰모델 이벤트 받기 - 뷰 - 뷰모델 바인딩 - 묶기
-        self.todosVM.notifyTodosChanged = {  [weak self]  updatedTodos in
-            guard let self = self else { return }
-            self.todos = updatedTodos
-            DispatchQueue.main.async {
-                self.myTableView.reloadData()
+        self.todosVM
+            .todos
+            .bind(to: self.myTableView.rx.items(cellIdentifier: TodoCell.reuseIdentifier,
+                                                cellType: TodoCell.self)) { [weak self] index, cellData, cell in
+                
+                guard let self = self else {return}
+                
+            
+                    // 데이터 쎌에 넣어주기
+                cell.updateUI(cellData, self.todosVM.selectedTodoIds)
+            
+                cell.onSelectedActionEvent = self.onSelectionItemAction(_:_:)
+            
+                cell.onEditActionEvent = self.onEditItemAction
+            
+                cell.onDeleteActionEvent = self.onDeleteItemAction(_:)
+                
             }
-        }
+                                                .disposed(by: disposeBag)
+        
+        
+//        self.todosVM
+//            .todos
+//            .withUnretained(self)
+//            .observe(on: MainScheduler.instance)
+//            .subscribe(onNext: { mainVC, updatedTodos in
+//                mainVC.todos = updatedTodos
+//                mainVC.myTableView.reloadData()
+//            })
+//            .disposed(by: disposeBag)
+        
+        // 뷰모델 이벤트 받기 - 뷰 - 뷰모델 바인딩 - 묶기
+//        self.todosVM.notifyTodosChanged = {  [weak self]  updatedTodos in
+//            guard let self = self else { return }
+//            self.todos = updatedTodos
+//            DispatchQueue.main.async {
+//                self.myTableView.reloadData()
+//            }
+//        }
         
         // 페이지 변경
         self.todosVM.notifyCurrentPageChanged = { [weak self] currentPage in
@@ -312,7 +348,7 @@ extension MainVC {
                           let self = self else { return }
                     
                     print(#fileID, #function, #line, "- 검색 API 호출하기 userInput: \(userInput)")
-                    self.todosVM.todos = []
+                    self.todosVM.todos.accept([])
                     // 뷰모델 검색어 갱신
                     self.todosVM.searchTerm = userInput
                 }
@@ -384,44 +420,36 @@ extension MainVC : UITableViewDelegate {
 
 // 1. 갯수
 // 2. 어떤 쎌
-extension MainVC : UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todos.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TodoCell.reuseIdentifier, for: indexPath) as? TodoCell else {
-            return UITableViewCell()
-        }
-        
-        let cellData = self.todos[indexPath.row]
-        
-        
-        
-        // 데이터 쎌에 넣어주기
-        cell.updateUI(cellData, self.todosVM.selectedTodoIds)
-        
-        // (Int) -> Void
-//        cell.onDeleteActionEvent = onDeleteItemAction
-        
-//        cell.onDeleteActionEvent = {
-//            print(#fileID, #function, #line, "- id: \($0)")
-//            self.todosVM.deleteATodo($0)
+//extension MainVC : UITableViewDataSource {
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return todos.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: TodoCell.reuseIdentifier, for: indexPath) as? TodoCell else {
+//            return UITableViewCell()
 //        }
-        
-        cell.onSelectedActionEvent = onSelectionItemAction(_:_:)
-        
-        cell.onEditActionEvent = onEditItemAction
-        
-        cell.onDeleteActionEvent = onDeleteItemAction(_:)
-        
-        
-        return cell
-        
-    }
-}
+//
+//        let cellData = self.todos[indexPath.row]
+//
+//
+//
+//        // 데이터 쎌에 넣어주기
+//        cell.updateUI(cellData, self.todosVM.selectedTodoIds)
+//
+//        cell.onSelectedActionEvent = onSelectionItemAction(_:_:)
+//
+//        cell.onEditActionEvent = onEditItemAction
+//
+//        cell.onDeleteActionEvent = onDeleteItemAction(_:)
+//
+//
+//        return cell
+//
+//    }
+//}
 
 extension MainVC {
     

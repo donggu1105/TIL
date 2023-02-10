@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07298C1429948B9400A63C6C /* TodosVM_Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07298C1329948B9400A63C6C /* TodosVM_Rx.swift */; };
+		07298C172994947100A63C6C /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 07298C162994947100A63C6C /* Differentiator */; };
+		07298C192994947100A63C6C /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 07298C182994947100A63C6C /* RxDataSources */; };
+		07298C1B2995D66E00A63C6C /* Optional+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07298C1A2995D66E00A63C6C /* Optional+Ext.swift */; };
 		F2381E45292D0D3A00BF06A0 /* TodosAPI+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2381E44292D0D3A00BF06A0 /* TodosAPI+Closure.swift */; };
 		F28D47BA293F7A720015A842 /* RxCombine in Frameworks */ = {isa = PBXBuildFile; productRef = F28D47B9293F7A720015A842 /* RxCombine */; };
 		F2902044292CEE0100B441A4 /* URLRequest+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2902043292CEE0100B441A4 /* URLRequest+Ext.swift */; };
 		F29247992929E74F0083F0B7 /* TodosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29247982929E74F0083F0B7 /* TodosAPI.swift */; };
-		F292479B2929EACD0083F0B7 /* TodosVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F292479A2929EACD0083F0B7 /* TodosVM.swift */; };
+		F292479B2929EACD0083F0B7 /* TodosVM_Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F292479A2929EACD0083F0B7 /* TodosVM_Closure.swift */; };
 		F292479E2929ECB90083F0B7 /* TodosResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F292479D2929ECB90083F0B7 /* TodosResponse.swift */; };
 		F29643B7292BC68000AD04ED /* MultipartForm in Frameworks */ = {isa = PBXBuildFile; productRef = F29643B6292BC68000AD04ED /* MultipartForm */; };
 		F2965D96292A7DCA00908B00 /* URL+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2965D95292A7DCA00908B00 /* URL+Ext.swift */; };
@@ -41,10 +45,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07298C1329948B9400A63C6C /* TodosVM_Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosVM_Rx.swift; sourceTree = "<group>"; };
+		07298C1A2995D66E00A63C6C /* Optional+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Ext.swift"; sourceTree = "<group>"; };
 		F2381E44292D0D3A00BF06A0 /* TodosAPI+Closure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodosAPI+Closure.swift"; sourceTree = "<group>"; };
 		F2902043292CEE0100B441A4 /* URLRequest+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Ext.swift"; sourceTree = "<group>"; };
 		F29247982929E74F0083F0B7 /* TodosAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosAPI.swift; sourceTree = "<group>"; };
-		F292479A2929EACD0083F0B7 /* TodosVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosVM.swift; sourceTree = "<group>"; };
+		F292479A2929EACD0083F0B7 /* TodosVM_Closure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosVM_Closure.swift; sourceTree = "<group>"; };
 		F292479D2929ECB90083F0B7 /* TodosResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosResponse.swift; sourceTree = "<group>"; };
 		F2965D95292A7DCA00908B00 /* URL+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Ext.swift"; sourceTree = "<group>"; };
 		F29EC830292E691D0038B24C /* TodosAPI+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodosAPI+Rx.swift"; sourceTree = "<group>"; };
@@ -74,10 +80,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07298C172994947100A63C6C /* Differentiator in Frameworks */,
 				F29EC82D292E68DB0038B24C /* RxRelay in Frameworks */,
 				F29EC82B292E68DB0038B24C /* RxCocoa in Frameworks */,
 				F29EC82F292E68DB0038B24C /* RxSwift in Frameworks */,
 				F2A1EBBE29337B1D0004FCAC /* CombineExt in Frameworks */,
+				07298C192994947100A63C6C /* RxDataSources in Frameworks */,
 				F28D47BA293F7A720015A842 /* RxCombine in Frameworks */,
 				F29643B7292BC68000AD04ED /* MultipartForm in Frameworks */,
 			);
@@ -115,6 +123,7 @@
 				F2E0C9102975440D00261DD0 /* Storyboared.swift */,
 				F2E0C9122975442C00261DD0 /* Nibbed.swift */,
 				F2E0C9142975444800261DD0 /* ReuseIdentifiable.swift */,
+				07298C1A2995D66E00A63C6C /* Optional+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -163,7 +172,8 @@
 				F2A438F5291D350E006402B0 /* Styles */,
 				F2C9BF75291BE34B003BC36C /* UIKit */,
 				F2A438F8291D3904006402B0 /* SwiftUi */,
-				F292479A2929EACD0083F0B7 /* TodosVM.swift */,
+				F292479A2929EACD0083F0B7 /* TodosVM_Closure.swift */,
+				07298C1329948B9400A63C6C /* TodosVM_Rx.swift */,
 				F2C9BF66291BE21B003BC36C /* TodoAppTutorialApp.swift */,
 				F2C9BF6A291BE21D003BC36C /* Assets.xcassets */,
 				F2C9BF6C291BE21D003BC36C /* Preview Content */,
@@ -213,6 +223,8 @@
 				F29EC82E292E68DB0038B24C /* RxSwift */,
 				F2A1EBBD29337B1D0004FCAC /* CombineExt */,
 				F28D47B9293F7A720015A842 /* RxCombine */,
+				07298C162994947100A63C6C /* Differentiator */,
+				07298C182994947100A63C6C /* RxDataSources */,
 			);
 			productName = TodoAppTutorial;
 			productReference = F2C9BF63291BE21B003BC36C /* TodoAppTutorial.app */;
@@ -247,6 +259,7 @@
 				F29EC829292E68DB0038B24C /* XCRemoteSwiftPackageReference "RxSwift" */,
 				F2A1EBBC29337B1D0004FCAC /* XCRemoteSwiftPackageReference "CombineExt" */,
 				F28D47B8293F7A720015A842 /* XCRemoteSwiftPackageReference "RxCombine" */,
+				07298C152994947100A63C6C /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = F2C9BF64291BE21B003BC36C /* Products */;
 			projectDirPath = "";
@@ -287,7 +300,7 @@
 				F2C9BF79291BE37A003BC36C /* MainVC.swift in Sources */,
 				F2E0C9132975442C00261DD0 /* Nibbed.swift in Sources */,
 				F2381E45292D0D3A00BF06A0 /* TodosAPI+Closure.swift in Sources */,
-				F292479B2929EACD0083F0B7 /* TodosVM.swift in Sources */,
+				F292479B2929EACD0083F0B7 /* TodosVM_Closure.swift in Sources */,
 				F2A438F7291D351C006402B0 /* Button+Style.swift in Sources */,
 				F29EC831292E691D0038B24C /* TodosAPI+Rx.swift in Sources */,
 				F2965D96292A7DCA00908B00 /* URL+Ext.swift in Sources */,
@@ -296,6 +309,8 @@
 				F2A1EBDD2933BD570004FCAC /* TodosAPI+Async.swift in Sources */,
 				F2A438FA291D391C006402B0 /* UISearchBarWrapper.swift in Sources */,
 				F2A438FC291D3A9B006402B0 /* TodoRow.swift in Sources */,
+				07298C1B2995D66E00A63C6C /* Optional+Ext.swift in Sources */,
+				07298C1429948B9400A63C6C /* TodosVM_Rx.swift in Sources */,
 				F2A438F2291CE6DA006402B0 /* TodoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,7 +440,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TodoAppTutorial/Preview Content\"";
-				DEVELOPMENT_TEAM = 67XDG42679;
+				DEVELOPMENT_TEAM = PK26VJ57ZY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -455,7 +470,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TodoAppTutorial/Preview Content\"";
-				DEVELOPMENT_TEAM = 67XDG42679;
+				DEVELOPMENT_TEAM = PK26VJ57ZY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -501,6 +516,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		07298C152994947100A63C6C /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		F28D47B8293F7A720015A842 /* XCRemoteSwiftPackageReference "RxCombine" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CombineCommunity/RxCombine.git";
@@ -536,6 +559,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		07298C162994947100A63C6C /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07298C152994947100A63C6C /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		07298C182994947100A63C6C /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07298C152994947100A63C6C /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
 		F28D47B9293F7A720015A842 /* RxCombine */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F28D47B8293F7A720015A842 /* XCRemoteSwiftPackageReference "RxCombine" */;

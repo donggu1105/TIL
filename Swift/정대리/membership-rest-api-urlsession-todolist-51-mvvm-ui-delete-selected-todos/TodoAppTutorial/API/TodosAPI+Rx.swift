@@ -76,7 +76,7 @@ extension TodosAPI {
         // 1. urlRequest 를 만든다
         
         let urlString = baseURL + "/todos" + "?page=\(page)"
-        
+
         guard let url = URL(string: urlString) else {
             return Observable.error(ApiError.notAllowedUrl)
         }
