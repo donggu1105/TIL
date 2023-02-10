@@ -122,7 +122,7 @@ class MainVC: UIViewController{
                 
             
                     // 데이터 쎌에 넣어주기
-                cell.updateUI(cellData, self.todosVM.selectedTodoIds)
+//                cell.updateUI(cellData, self.todosVM.selectedTodoIds)
             
                 cell.onSelectedActionEvent = self.onSelectionItemAction(_:_:)
             
@@ -153,13 +153,20 @@ class MainVC: UIViewController{
 //            }
 //        }
         
+        
+        self.todosVM
+            .currentPageInfo
+            .observe(on: MainScheduler.instance)
+            .bind(to: self.pageInfoLabel.rx.text)
+            .disposed(by: disposeBag)
+            
         // 페이지 변경
-        self.todosVM.notifyCurrentPageChanged = { [weak self] currentPage in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.pageInfoLabel.text = "페이지 : \(currentPage)"
-            }
-        }
+//        self.todosVM.notifyCurrentPageChanged = { [weak self] currentPage in
+//            guard let self = self else { return }
+//            DispatchQueue.main.async {
+//                self.pageInfoLabel.text = "페이지 : \(currentPage)"
+//            }
+//        }
         
         // 로딩중 여부
         self.todosVM.notifyLoadingStateChanged = { [weak self] isLoading in
@@ -186,14 +193,22 @@ class MainVC: UIViewController{
             }
         }
         
+        self.todosVM
+            .notifyHasNextPage
+            .observe(on: MainScheduler.instance)
+            .map { !$0 ? self.bottomNoMoreDataView : nil }
+            .bind(to: self.myTableView.rx.tableFooterView)
+            .disposed(by: disposeBag)
+        
+        
         // 다음페이지 존재 여부
-        self.todosVM.notifyHasNextPage = { [weak self] hasNext in
-            guard let self = self else { return }
-            print(#fileID, #function, #line, "- hasNext: \(hasNext)")
-            DispatchQueue.main.async {
-                self.myTableView.tableFooterView = !hasNext ? self.bottomNoMoreDataView : nil
-            }
-        }
+//        self.todosVM.notifyHasNextPage = { [weak self] hasNext in
+//            guard let self = self else { return }
+//            print(#fileID, #function, #line, "- hasNext: \(hasNext)")
+//            DispatchQueue.main.async {
+//                self.myTableView.tableFooterView = !hasNext ? self.bottomNoMoreDataView : nil
+//            }
+//        }
         
         // 할일 추가완료
         self.todosVM.notifyTodoAdded = { [weak self] in

@@ -38,6 +38,7 @@ class TodosVM_Rx {
     
     var pageInfo: BehaviorRelay<Meta?> = BehaviorRelay<Meta?>(value: nil)
     
+    var notifyHasNextPage: Observable<Bool>
 //    var pageInfo : Meta? = nil {
 //        didSet {
 //            print(#fileID, #function, #line, "- pageInfo: \(pageInfo)")
@@ -50,16 +51,20 @@ class TodosVM_Rx {
 //        }
 //    }
     
-    var currentPage: Int {
-        get {
-            if let pageInfo = self.pageInfo.value,
-               let currentPage = pageInfo.currentPage {
-                return currentPage
-            } else {
-                return 1
-            }
-        }
-    }
+    var currentPage: BehaviorRelay<Int> = BehaviorRelay<Int>(value: 1)
+    
+    var currentPageInfo: Observable<String>
+    
+//    var currentPage: Int {
+//        get {
+//            if let pageInfo = self.pageInfo.value,
+//               let currentPage = pageInfo.currentPage {
+//                return currentPage
+//            } else {
+//                return 1
+//            }
+//        }
+//    }
     
     var isLoading : Bool = false {
         didSet {
@@ -80,7 +85,7 @@ class TodosVM_Rx {
     var notifyTodoAdded : (() -> Void)? = nil
     
     // 다음페이지 있는지  이벤트
-    var notifyHasNextPage : ((_ hasNext: Bool) -> Void)? = nil
+//    var notifyHasNextPage : ((_ hasNext: Bool) -> Void)? = nil
     
     // 검색결과 없음 여부 이벤트
     var notifySearchDataNotFound : ((_ noContent: Bool) -> Void)? = nil
@@ -92,12 +97,28 @@ class TodosVM_Rx {
     var notifyLoadingStateChanged : ((_ isLoading: Bool) -> Void)? = nil
     
     // 현재페이지 변경 이벤트
-    var notifyCurrentPageChanged : ((Int) -> Void)? = nil
+//    var notifyCurrentPageChanged : ((Int) -> Void)? = nil
     
     
     
     init(){
         print(#fileID, #function, #line, "- ")
+        
+        currentPageInfo = self.currentPage.map {"페이지: \($0)"}
+        
+        pageInfo.compactMap {$0}
+            .map {
+                   if let currentPage = $0.currentPage {
+                    return currentPage
+                } else {
+                    return 1
+                }
+            }
+            .bind(onNext: self.currentPage.accept(_:))
+            .disposed(by: disposeBag)
+        
+        // 다음페이지 있는지 여부 이벤트
+        self.notifyHasNextPage = pageInfo.skip(1).map { $0?.hasNext() ?? true }
         
         fetchTodos()
     }// init
@@ -196,9 +217,9 @@ class TodosVM_Rx {
         }
         
         if searchTerm.count > 0 { // 검색어가 있으면
-            self.searchTodos(searchTerm: searchTerm, page: self.currentPage + 1)
+            self.searchTodos(searchTerm: searchTerm, page: self.currentPage.value + 1)
         } else {
-            self.fetchTodos(page: currentPage + 1)
+            self.fetchTodos(page: currentPage.value + 1)
         }
     }
     
