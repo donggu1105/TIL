@@ -84,3 +84,48 @@ decode(json: json1)
         }
     }
     .disposed(by: disposebag)
+
+
+print("----Maybe1----")
+
+Maybe<String>.just("🐿️")
+    .subscribe(onSuccess: {
+            print($0)
+    },
+               onError: {print($0)},
+               onCompleted: {print("completed")},
+               onDisposed: {print("disposed")}).disposed(by: disposebag)
+
+
+print("----Maybe2----")
+
+Observable<String>.create {observer -> Disposable in
+    observer.onError(TraitsError.maybe)
+    return Disposables.create()
+}
+.asMaybe()
+.subscribe(onSuccess: {
+        print($0)
+},
+           onError: {print($0)},
+           onCompleted: {print("completed")},
+           onDisposed: {print("disposed")}).disposed(by: disposebag)
+
+print("----Completable1----")
+
+Completable.create { observer -> Disposable in
+    observer(.error(TraitsError.completable))
+    return Disposables.create()
+}
+.subscribe(onCompleted: {print("completed1")}, onError: {print($0)}, onDisposed: {print("disposed")})
+.disposed(by: disposebag)
+
+
+print("----Completable2----")
+
+Completable.create { observer -> Disposable in
+    observer(.completed)
+    return Disposables.create()
+}
+.subscribe(onCompleted: {print("completed2")}, onError: {print($0)}, onDisposed: {print("disposed")})
+.disposed(by: disposebag)
