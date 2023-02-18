@@ -2,14 +2,14 @@ import Foundation
 
 //// 1
 protocol Remote {
-   func turnOn()
-   func turnOff()
+   func turnOn() // 프로토콜 요구사항 메서드
+   func turnOff() // 프로토콜 요구사항 메서드
 }
 
 extension Remote {
     func turnOn() { print("리모콘 켜기") }
     func turnOff() { print("리모콘 끄기") }
-    func doAnotherAction() { print("리모콘 또 다른 동작") }
+    func doAnotherAction() { print("리모콘 또 다른 동작") }  // Direct Dispatch ? or Virtual Table
 }
 
 class TV: Remote {

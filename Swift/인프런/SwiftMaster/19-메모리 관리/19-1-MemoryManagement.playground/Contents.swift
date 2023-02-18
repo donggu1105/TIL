@@ -78,7 +78,6 @@ dog1 = Dog(name: "댕댕이", weight: 7.0)     // RC + 1   RC == 1
 dog2 = dog1                               // RC + 1   RC == 2
 dog3 = dog1                               // RC + 1   RC == 3
 
-
 dog3?.name = "깜둥이"
 dog2?.name
 dog1?.name
