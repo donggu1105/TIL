@@ -10,11 +10,11 @@ let valueCaptureClousure = {
 
 num = 1
 
-valueCaptureClousure() // ?
+valueCaptureClousure() // ? 헤일리: 1 | 리디아:1 | 셀린: 1
 
 num = 3
 
-valueCaptureClousure() // ?
+valueCaptureClousure() // 헤일리: 3| 리디아: 3| 셀린: 3
 
 
 let valueCaptureListClosure = { [num] in
@@ -23,7 +23,7 @@ let valueCaptureListClosure = { [num] in
 
 num = 7
 
-valueCaptureListClosure() // ?
+valueCaptureListClosure() // 헤일리: 3| 리디아: 3| 셀린: 3
 
 
 
@@ -31,6 +31,7 @@ valueCaptureListClosure() // ?
 
 class SomeClass {
     var num = 0
+    var clousure = refTypeCapture
 }
 
 var x = SomeClass()
@@ -39,7 +40,8 @@ var y = SomeClass()
 print(x.num, y.num)
 
 
-let refTypeCapture = { [x] in
+let refTypeCapture = { [weak x] in
+    guard let x = x else {return}
     print(x.num, y.num)
 }
 
@@ -47,8 +49,8 @@ x.num = 1
 y.num = 2
 
 
-print(x.num, y.num) // ?
+print(x.num, y.num) // 헤일리: 1 2 | 리디아:1 2 | 셀린: 1 2
 
 
-refTypeCapture() // ? 
+refTypeCapture() // 헤일리:  | 리디아:1 2 | 셀린:
 
