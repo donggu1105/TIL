@@ -30,6 +30,7 @@
 		0775E32329A34445003691B8 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0775E32229A34445003691B8 /* FilterViewModel.swift */; };
 		0775E32529A34518003691B8 /* BlogListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0775E32429A34518003691B8 /* BlogListViewModel.swift */; };
 		0775E32729A34600003691B8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0775E32629A34600003691B8 /* MainViewModel.swift */; };
+		0775E32929A73E1E003691B8 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0775E32829A73E1E003691B8 /* MainModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		0775E32229A34445003691B8 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		0775E32429A34518003691B8 /* BlogListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogListViewModel.swift; sourceTree = "<group>"; };
 		0775E32629A34600003691B8 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		0775E32829A73E1E003691B8 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			children = (
 				0732019329A17E640086FAC8 /* MainViewController.swift */,
 				0775E32629A34600003691B8 /* MainViewModel.swift */,
+				0775E32829A73E1E003691B8 /* MainModel.swift */,
 				0775E31129A2FF2E003691B8 /* SubComponents */,
 			);
 			path = MainViewController;
@@ -270,6 +273,7 @@
 				073201B929A2F3C30086FAC8 /* BlogListCellData.swift in Sources */,
 				073201B129A180D30086FAC8 /* SearchBar.swift in Sources */,
 				0732019029A17E640086FAC8 /* AppDelegate.swift in Sources */,
+				0775E32929A73E1E003691B8 /* MainModel.swift in Sources */,
 				073201B329A18C100086FAC8 /* FilterView.swift in Sources */,
 				0775E32129A3428B003691B8 /* SearchBarViewModel.swift in Sources */,
 				0775E31F29A328B0003691B8 /* SearchBlogNetwork.swift in Sources */,
