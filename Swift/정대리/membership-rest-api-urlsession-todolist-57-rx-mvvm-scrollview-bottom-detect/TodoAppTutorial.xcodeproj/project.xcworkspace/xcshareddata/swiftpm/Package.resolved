@@ -1,0 +1,41 @@
+{
+  "pins" : [
+    {
+      "identity" : "combineext",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/CombineCommunity/CombineExt.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d7b896fa9ca8b47fa7bcde6b43ef9b70bf8c1f56"
+      }
+    },
+    {
+      "identity" : "multipartform",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/davbeck/MultipartForm",
+      "state" : {
+        "branch" : "master",
+        "revision" : "c91979ea956a360bf84f0cc480afbcc7c946c753"
+      }
+    },
+    {
+      "identity" : "rxcombine",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/CombineCommunity/RxCombine.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "010ef6fcca69cbbabe8ed7f52b31485b70c3a22d"
+      }
+    },
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveX/RxSwift.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "8ec08deca8271516f673706e78fb954797cd6627"
+      }
+    }
+  ],
+  "version" : 2
+}

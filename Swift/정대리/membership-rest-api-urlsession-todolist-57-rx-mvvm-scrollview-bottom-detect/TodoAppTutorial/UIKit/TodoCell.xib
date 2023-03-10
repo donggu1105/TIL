@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoCell" rowHeight="171" id="CpI-LO-w6L" customClass="TodoCell" customModule="TodoAppTutorial" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="171"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CpI-LO-w6L" id="05e-AJ-3i6">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="171"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="todoId: 01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYL-xk-gH9">
+                        <rect key="frame" x="20" y="9.9999999999999982" width="76" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQf-p7-1bI">
+                        <rect key="frame" x="20" y="50.333333333333336" width="233" height="110.66666666666666"/>
+                        <string key="text">할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 할일 내용 </string>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rzt-An-V0w">
+                        <rect key="frame" x="263" y="10" width="120" height="34.333333333333336"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzJ-6Y-3jk">
+                                <rect key="frame" x="0.0" y="0.0" width="56" height="34.333333333333336"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="수정"/>
+                                <connections>
+                                    <action selector="onEditBtnClicked:" destination="CpI-LO-w6L" eventType="touchUpInside" id="oEC-jd-iT5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4n-nH-J6S">
+                                <rect key="frame" x="64" y="0.0" width="56" height="34.333333333333336"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="삭제">
+                                    <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onDeleteBtnClicked:" destination="CpI-LO-w6L" eventType="touchUpInside" id="7t7-5x-7CC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="tdg-OW-zMD"/>
+                        </constraints>
+                    </stackView>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="729-4D-Shb">
+                        <rect key="frame" x="334" y="57" width="51" height="31"/>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="MYL-xk-gH9" firstAttribute="leading" secondItem="05e-AJ-3i6" secondAttribute="leading" constant="20" symbolic="YES" id="Cms-7n-Cac"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="729-4D-Shb" secondAttribute="bottom" constant="20" id="FMa-We-Zpk"/>
+                    <constraint firstItem="729-4D-Shb" firstAttribute="top" secondItem="Rzt-An-V0w" secondAttribute="bottom" constant="12.666666666666664" id="LpZ-xZ-Qd1"/>
+                    <constraint firstItem="Rzt-An-V0w" firstAttribute="leading" secondItem="qQf-p7-1bI" secondAttribute="trailing" constant="10" id="MDK-cc-SNt"/>
+                    <constraint firstAttribute="bottom" secondItem="qQf-p7-1bI" secondAttribute="bottom" constant="10" id="RG2-2i-2dM"/>
+                    <constraint firstAttribute="trailing" secondItem="Rzt-An-V0w" secondAttribute="trailing" constant="10" id="aSo-mX-Mf5"/>
+                    <constraint firstItem="Rzt-An-V0w" firstAttribute="top" secondItem="MYL-xk-gH9" secondAttribute="top" id="b8g-FJ-Ner"/>
+                    <constraint firstItem="qQf-p7-1bI" firstAttribute="leading" secondItem="MYL-xk-gH9" secondAttribute="leading" id="d5g-qF-eel"/>
+                    <constraint firstItem="qQf-p7-1bI" firstAttribute="top" secondItem="MYL-xk-gH9" secondAttribute="bottom" constant="20" id="hCS-Cr-Tgr"/>
+                    <constraint firstItem="729-4D-Shb" firstAttribute="trailing" secondItem="Rzt-An-V0w" secondAttribute="trailing" id="lB7-T6-zqU"/>
+                    <constraint firstItem="MYL-xk-gH9" firstAttribute="top" secondItem="05e-AJ-3i6" secondAttribute="top" constant="10" id="uSh-sK-L6n"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLabel" destination="qQf-p7-1bI" id="3Wi-GW-dx7"/>
+                <outlet property="selectionSwitch" destination="729-4D-Shb" id="YI2-5p-hiM"/>
+                <outlet property="titleLabel" destination="MYL-xk-gH9" id="AS0-Ng-v5t"/>
+            </connections>
+            <point key="canvasLocation" x="32.824427480916029" y="69.366197183098592"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
