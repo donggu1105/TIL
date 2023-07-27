@@ -67,6 +67,9 @@ class App extends StatelessWidget {
               Row(
                 children: [
                   Container(
+                    decoration: BoxDecoration(
+                      color: Colors.amber
+                    ),
                     child: Text('Transfer'),
                   )
                 ],
