@@ -2,16 +2,9 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Link from "next/link";
 
-export async function getServerSideProps() {
-
-    console.log('getServerSideProps')
-    return {
-        props : { time : new Date().toISOString() }
-    }
-}
 
 
-export default function Home({time}) {
+export default function CSR() {
   return (
     <div className={styles.container}>
       <Head>
@@ -21,11 +14,11 @@ export default function Home({time}) {
 
       <main>
         <h1 className={styles.title}>
-            {time}
+
         </h1>
 
           <h1>
-              <Link href="/csr"><a>CSR 로</a></Link>
+              <Link href="/csr">CSR 로</Link>
           </h1>
 
       </main>
