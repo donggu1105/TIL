@@ -4,14 +4,18 @@ import Link from "next/link";
 import {useEffect, useState} from "react";
 
 
-export default function CSR() {
 
-    const [time, setTime] = useState()
+export async function getStaticProps() {
 
-    useEffect(() => {
-        console.log('client')
-        setTime(new Date().toISOString())
-    }, [])
+    console.log('getStaticProps')
+    return {
+        props : { time : new Date().toISOString() }
+    }
+}
+
+// Static Site Generation - 미리 그려둔다.
+export default function SSG({time}) {
+
 
 
   return (
