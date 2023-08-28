@@ -7,7 +7,7 @@ export default class Board extends Component {
 
     renderSquare(i) {
         return (
-            <Square/>
+            <Square value={i}/>
         );
     }
     render() {

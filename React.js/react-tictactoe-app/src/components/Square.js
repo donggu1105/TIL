@@ -3,8 +3,8 @@ import "./Square.css";
 export default class Square extends Component {
     render() {
         return (
-            <button className="square">
-                Square
+            <button className="square" onClick={() => console.log("click")}>
+                {this.props.value}
             </button>
         );
     }
