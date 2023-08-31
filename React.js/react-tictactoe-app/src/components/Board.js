@@ -2,27 +2,17 @@ import React, {useState} from 'react';
 import Square from "./Square";
 import "./Board.css";
 
-const Board = () => {
-
-    const [squares, setSquares] = useState(Array(9).fill(null));
-
-    const handleClick = (i) =>  {
-        const newSquares = squares.slice();
-        newSquares[i] = 'X';
-        setSquares(newSquares);
-    }
+const Board = ({squares, onClick}) => {
 
     const renderSquare = (i) => {
         return (
             <Square value={squares[i]}
-                    onClick={() => handleClick(i)}/>
+                    onClick={() => onClick(i)}/>
         );
     }
 
-
     return (
         <div>
-            <div className="status">NEXT PLAYER: X, O</div>
             <div className="board-row">
                 {renderSquare(0)}
                 {renderSquare(1)}
