@@ -1,4 +1,4 @@
-package com.fittv.admin.common;
+package com.fittv.admin.common.response;
 
 
 import lombok.AllArgsConstructor;

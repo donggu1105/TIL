@@ -1,7 +1,6 @@
 package com.fittv.admin.exception;
 
-import com.fittv.admin.common.ResponseCodes;
-import lombok.AllArgsConstructor;
+import com.fittv.admin.common.response.ResponseCodes;
 import lombok.Getter;
 
 @Getter
