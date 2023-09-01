@@ -3,4 +3,4 @@
 
 I record what I learn today
 
-# It's me ! (https://www.youtube.com/@callme_donggu)
+# I also make some records here too ! (https://www.youtube.com/@callme_donggu)
