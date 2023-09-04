@@ -4,6 +4,8 @@ import "./Board.css";
 
 const Board = ({squares, onClick}) => {
 
+    const history = []
+
     const renderSquare = (i) => {
         return (
             <Square value={squares[i]}
@@ -12,7 +14,7 @@ const Board = ({squares, onClick}) => {
     }
 
     return (
-        <div>
+        <div className="board-wrapper">
             <div className="board-row">
                 {renderSquare(0)}
                 {renderSquare(1)}
