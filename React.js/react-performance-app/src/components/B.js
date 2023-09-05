@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useCallback} from "react";
 
 
 const B = ({message, posts}) => {
@@ -25,6 +25,9 @@ const B = ({message, posts}) => {
         )
     })
 
+
+    const testFunction = useCallback(() => {
+    }, []);
 
     return (
         <div>
