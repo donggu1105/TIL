@@ -6,7 +6,7 @@
     background-clip: content-box;
     padding: 20px 0;
     box-sizing: border-box;
-    transform: 400ms all ease-in-out;
+    /*transform: 400ms all ease-in-out;*/
     cursor: pointer;
     width: 80px;
     z-index: 1000;
@@ -24,7 +24,7 @@
     background-clip: content-box;
     padding: 20px 0;
     box-sizing: border-box;
-    transform: 400ms all ease-in-out;
+    /*transform: 400ms all ease-in-out;*/
     cursor: pointer;
     width: 80px;
     z-index: 1000;
@@ -85,7 +85,7 @@
     width: 100%;
     max-height: 144px;
     margin-right: 10px;
-    transform: transform 450ms;
+    /*transform: transform 450ms;*/
     border-radius: 4px;
 }
 
@@ -111,7 +111,7 @@
 }
 
 .swiper-pagination-bullet {
-    background: gray !important;
+    /*background: gray !important;*/
     opacity: 1 !important;
 }
 
