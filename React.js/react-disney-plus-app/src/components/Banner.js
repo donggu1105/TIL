@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import requests from "../api/requests";
 import axios from "../api/axios";
 import "./Banner.css"
-import {click} from "@testing-library/user-event/dist/click";
 import styled from "styled-components";
 function Banner() {
 
@@ -24,7 +23,6 @@ function Banner() {
             Math.floor(Math.random() * request.data.results.length)
             ].id
 
-        console.log(`movieId:  ${movieId}`);
 
         const {data: movieDetail} = await axios.get(`movie/${movieId}`, {
             params: {append_to_response: "videos"}

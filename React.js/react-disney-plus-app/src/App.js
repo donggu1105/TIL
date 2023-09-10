@@ -1,8 +1,10 @@
 import './App.css';
 import Nav from "./components/Nav";
 import styled from "styled-components";
-import {useEffect, useState} from "react";
 import Banner from "./components/Banner";
+import Cateogory from "./components/Cateogory";
+import Row from "./components/Row";
+import requests from "./api/requests";
 
 function App() {
 
@@ -10,8 +12,13 @@ function App() {
   return (
     <div className="App">
             <Container>
-              <Nav />
-            <Banner/>
+                <Nav />
+                <Banner/>
+                <Cateogory />
+                <Row title="Tredning now" id="TN" fetchUrl={requests.fetchTrending} />
+                <Row title="Top Rated" id="TR" fetchUrl={requests.fetchTopRated} />
+                <Row title="Action movies" id="AM" fetchUrl={requests.fetchActionMovies} />
+                <Row title="Comedy movies" id="CM" fetchUrl={requests.fetchComedyMovies} />
             </Container>
     </div>
   );
