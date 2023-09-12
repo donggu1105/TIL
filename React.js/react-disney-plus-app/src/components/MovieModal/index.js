@@ -15,7 +15,7 @@ function MovieModal({
             <div className="wrapper-modal">
                 <div className="modal">
                     <span
-                        onClick={() => setModalVisibility(false)}
+                        // onClick={() => setModalVisibility(false)}
                         className="modal-close"
                     >
                     X
@@ -24,7 +24,7 @@ function MovieModal({
 
                     <img
                         className="modal__poster-img"
-                        src={`${base_url}${backdrop_path}`}
+                        // src={`${base_url}${backdrop_path}`}
                         alt="modal__poster-img"
                     />
 
