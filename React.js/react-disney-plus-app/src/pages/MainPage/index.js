@@ -1,27 +1,23 @@
-import React from 'react';
-import Nav from "../../components/Nav";
-import Banner from "../../components/Banner";
-import Cateogory from "../../components/Cateogory";
-import Row from "../../components/Row";
+import Banner from '../../components/Banner'
+import Nav from '../../components/Nav'
+import Row from '../../components/Row'
+import styled from 'styled-components'
 import requests from "../../api/requests";
-import styled from "styled-components";
 
-function MainPage(props) {
+const MainPage = () => {
     return (
         <Container>
             <Nav />
-            <Banner/>
-            <Cateogory />
-            <Row title="Tredning now" id="TN" fetchUrl={requests.fetchTrending} />
+            <Banner />
+            <Row title="Trending Now" id="TN" fetchUrl={requests.fetchTrending} />
             <Row title="Top Rated" id="TR" fetchUrl={requests.fetchTopRated} />
-            <Row title="Action movies" id="AM" fetchUrl={requests.fetchActionMovies} />
-            <Row title="Comedy movies" id="CM" fetchUrl={requests.fetchComedyMovies} />
+            <Row title="Action Movies" id="AM" fetchUrl={requests.fetchActionMovies} />
+            <Row title="Comedy Movies" id="CM" fetchUrl={requests.fetchComedyMovies} />
         </Container>
-    );
+    )
 }
 
-export default MainPage;
-
+export default MainPage
 
 const Container = styled.main`
   position: relative;
@@ -29,8 +25,8 @@ const Container = styled.main`
   overflow-x: hidden;
   display: block;
   top: 72px;
-  padding: 0 calc(3.5vw + 5px);
-  
+  padding: 0 calc( 3.5vw + 5px );
+
   &:after {
     background: url("/images/home-background.png") center center / cover no-repeat fixed;
     content: "";
