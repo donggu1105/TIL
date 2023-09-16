@@ -5,6 +5,7 @@ import LoginPage from "./pages/LoginPage";
 import MainPage from "./pages/MainPage";
 import DetailPage from "./pages/DetailPage";
 import SearchPage from "./pages/SearchPage";
+import app from "./firebase";
 
 
 const Layout = () => {

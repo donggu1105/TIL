@@ -65,9 +65,9 @@ const DropDown = styled.div`
   position: absolute;
   top: 48px;
   right: 0px;
-  background: rgb(19, 19, 19)
+  background: rgb(19, 19, 19);
   border: 1px solid rgba(151, 151, 151, 0.34);
-  border-radius:  4px;
+  border-radius: 4px;
   box-shadow: rgb(0 0 0 /50%) 0px 0px 18px 0px;
   padding: 10px;
   font-size: 14px;
@@ -132,7 +132,7 @@ const NavWrapper = styled.nav`
   left: 0;
   right: 0;
   height: 70px;
-  background-color: ${props => props.show ? "#090b13" : "transparent"};
+  background-color: ${props => (props.$show ? '#090b13' : 'transparent')};
   display: flex;
   justify-content: space-between;
   align-items: center;
