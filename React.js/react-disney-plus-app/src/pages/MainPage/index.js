@@ -1,7 +1,9 @@
-import Banner from '../../components/Banner'
-import Nav from '../../components/Nav'
-import Row from '../../components/Row'
+import React from 'react'
 import styled from 'styled-components'
+import Nav from "../../components/Nav";
+import Banner from "../../components/Banner";
+import Category from "../../components/Cateogory";
+import Row from "../../components/Row";
 import requests from "../../api/requests";
 
 const MainPage = () => {
@@ -9,6 +11,7 @@ const MainPage = () => {
         <Container>
             <Nav />
             <Banner />
+            <Category />
             <Row title="Trending Now" id="TN" fetchUrl={requests.fetchTrending} />
             <Row title="Top Rated" id="TR" fetchUrl={requests.fetchTopRated} />
             <Row title="Action Movies" id="AM" fetchUrl={requests.fetchActionMovies} />
