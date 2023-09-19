@@ -1,3 +1,5 @@
+import {Type} from "../../components/Type";
+
 export const OrderPage = () => {
     return (
         <div>
@@ -6,7 +8,7 @@ export const OrderPage = () => {
                 <Type orderType="products"/>
             </div>
 
-            <div style={{ display: "flext", marginTop: 20}} >
+            <div style={{ display: "flex", marginTop: 20}} >
                 <div style={{ width : "50%"}}>
                     <Type orderType="options" />
                 </div>
