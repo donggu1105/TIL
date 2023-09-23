@@ -1,4 +1,10 @@
-export const Products = ({name, imagePath}) => {
+export const Products = ({name, imagePath, updateItemCount}) => {
+
+    const handleChange = (event) => {
+        const currentValue = event.target.value;
+        updateItemCount(name, currentValue);
+    }
+
     return (
         <div style={{textAlign: 'center'}}>
             <img
@@ -15,6 +21,7 @@ export const Products = ({name, imagePath}) => {
                     name="quantity"
                     min="0"
                     defaultValue={0}
+                    onChange={handleChange}
                 />
             </form>
         </div>
