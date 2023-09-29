@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState, AppThunk } from '../../app/store';
 import { fetchCount } from './counterAPI';
+import axios from "axios";
 
 export interface CounterState {
   value: number;
@@ -17,7 +18,7 @@ const initialState: CounterState = {
 // will call the thunk with the `dispatch` function as the first argument. Async
 // code can then be executed and other actions can be dispatched. Thunks are
 // typically used to make async requests.
-export const incrementAsync = createAsyncThunk(
+export const incrementAsync: any = createAsyncThunk(
   'counter/fetchCount',
   async (amount: number) => {
     const response = await fetchCount(amount);
@@ -81,4 +82,21 @@ export const incrementIfOdd =
     }
   };
 
+
+export const fetchUsersAsync: any = createAsyncThunk(
+    'counter/fetchUsersAsync',
+    async (_, {signal}) => {
+
+        const controller = new AbortController();
+
+        signal.addEventListener('abort', () => {
+            controller.abort();
+        })
+
+
+
+        await axios.get("https://jsonplaceholder.typicode.com/users", {signal: controller.signal});
+    }
+
+)
 export default counterSlice.reducer;
