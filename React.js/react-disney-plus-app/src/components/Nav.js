@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
 import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth'
+import {useDispatch, useSelector} from "react-redux";
+import {setUser, removeUser} from "../store/userSlice"
 
 const Nav = () => {
 
-    const initialUserData = localStorage.getItem('userData') ?
-        JSON.parse(localStorage.getItem('userData')) : {};
 
     const [show, setShow] = useState(false);
     const { pathname } = useLocation();
@@ -14,7 +14,9 @@ const Nav = () => {
     const navigate = useNavigate();
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
-    const [userData, setUserData] = useState(initialUserData);
+
+    const dispatch = useDispatch();
+    const user = useSelector(state => state.user);
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -54,8 +56,17 @@ const Nav = () => {
     const handleAuth = () => {
         signInWithPopup(auth, provider)
             .then(result => {
-                setUserData(result.user);
-                localStorage.setItem("userData", JSON.stringify(result.user));
+
+
+                dispatch(setUser({
+                    id: result.user.uid,
+                    email: result.user.email,
+                    displayName: result.user.displayName,
+                    photoURL: result.user.photoURL
+
+                }))
+                // setUserData(result.user);
+                // localStorage.setItem("userData", JSON.stringify(result.user));
             })
             .catch(error => {
                 console.log(error);
@@ -65,7 +76,7 @@ const Nav = () => {
     const handleSignOut = () => {
         signOut(auth)
             .then(() => {
-                setUserData({});
+                dispatch(removeUser());
                 navigate(`/`);
             })
             .catch((error) => {
@@ -95,7 +106,7 @@ const Nav = () => {
                     />
 
                     <SignOut>
-                        <UserImg src={userData.photoURL} alt={userData.displayName} />
+                        <UserImg src={user.photoURL} alt={user.displayName} />
                         <DropDown>
                             <span onClick={handleSignOut}>Sign Out</span>
                         </DropDown>
@@ -112,9 +123,9 @@ const DropDown = styled.div`
   position: absolute;
   top: 48px;
   right: 0px;
-  background: rgb(19, 19, 19)
+  background: rgb(19, 19, 19);
   border: 1px solid rgba(151, 151, 151, 0.34);
-  border-radius:  4px;
+  border-radius: 4px;
   box-shadow: rgb(0 0 0 /50%) 0px 0px 18px 0px;
   padding: 10px;
   font-size: 14px;
