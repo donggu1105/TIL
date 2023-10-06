@@ -3,10 +3,17 @@
 import React, {useState} from 'react';
 import Link from "next/link";
 import NavItem from "@/components/NavItem";
+import {useSession} from "next-auth/react";
+import {stat} from "fs";
 
 const Navbar = () => {
 
     const [menu, setMenu] = useState(false);
+
+    const {data: session, status} = useSession();
+    console.log({session}, status);
+
+
 
     const handleMenu = () => {
         setMenu(!menu)
