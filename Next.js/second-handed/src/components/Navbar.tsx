@@ -10,8 +10,7 @@ const Navbar = () => {
 
     const [menu, setMenu] = useState(false);
 
-    const {data: session, status} = useSession();
-    console.log({session}, status);
+
 
 
 
