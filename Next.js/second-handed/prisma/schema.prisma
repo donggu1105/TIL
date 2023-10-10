@@ -38,6 +38,11 @@ model Session {
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
+enum UserType {
+  User
+  Admin
+}
+
 model User {
   id            String    @id @default(cuid())
   name          String?
@@ -47,6 +52,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   hasedPasswrod String?
+  userType UserType @default(User)
 }
 
 model VerificationToken {

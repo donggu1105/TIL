@@ -1,4 +1,4 @@
-import NextAuth, {NextAuthOptions} from "next-auth"
+import NextAuth, { NextAuthOptions } from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 import { PrismaClient } from "@prisma/client"
 import CredentialsProvider from 'next-auth/providers/credentials'
@@ -28,7 +28,7 @@ export const authOptions: NextAuthOptions = {
                 // Add logic here to look up the user from the credentials supplied
 
 
-                const user = { id: "1", name: "J Smith", email: "jsmith@example.com" }
+                const user = { id: "1", name: "J Smith", email: "jsmith@example.com", role: "User"}
 
                 if (user) {
                     // Any object returned will be saved in `user` property of the JWT
@@ -46,21 +46,20 @@ export const authOptions: NextAuthOptions = {
     session: {
         strategy: 'jwt',
     },
+    jwt: {
+        secret: process.env.JWT_SECRET,
+        maxAge: 30 * 24 * 60 * 60,
+    },
     callbacks: {
         async jwt({token, user}) {
-        console.log("tokn : ", token)
-        console.log("user :" + user)
             return {...token, ...user}},
 
         async session({session, token}) {
+            session.user = token;
             return session;
 
         },
     }
-
-
-
-
 }
 
 export default NextAuth(authOptions);

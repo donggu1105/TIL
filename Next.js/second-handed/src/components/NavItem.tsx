@@ -16,8 +16,7 @@ const NavItem = ({mobile} : {mobile?: boolean}) => {
                 ?
                 <li className="py-2 text-center border-b-4 cursor-pointer"><button onClick={() => signOut()}>SiginOut</button></li>
                 :
-                <li className="py-2 text-center border-b-4 cursor-pointer"><button onClick={() => signIn()}
-                >SiginIn</button></li>
+                <li className="py-2 text-center border-b-4 cursor-pointer"><button onClick={() => signIn()}>SiginIn</button></li>
             }
 
 
