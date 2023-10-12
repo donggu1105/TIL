@@ -51,7 +51,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  hasedPasswrod String?
+  hashedPassword String?
   userType UserType @default(User)
 }
 
