@@ -25,7 +25,9 @@ export const authOptions: NextAuthOptions = {
                 email: { label: "Email", type: "text"},
                 password: {  label: "Password", type: "password" }
             },
+
             async authorize(credentials, req) {
+
                 // Add logic here to look up the user from the credentials supplied
                 if (!credentials?.email || !credentials?.password) {
                     throw new Error('Invalid credentials');
@@ -35,6 +37,7 @@ export const authOptions: NextAuthOptions = {
                         email: credentials.email,
                     }
                 })
+
 
                 if (!user || !user?.hashedPassword) {
                     // oauth login

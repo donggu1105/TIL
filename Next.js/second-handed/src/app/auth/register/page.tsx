@@ -6,10 +6,13 @@ import Link from "next/link";
 import Input from "@/components/Input";
 import axios from "axios";
 import {router} from "next/client";
+import {useRouter} from "next/navigation";
 
 const RegisterPage = () => {
 
     const [isLoading, setIsLoading] = useState(false);
+
+    const router = useRouter();
 
     const {register, handleSubmit, formState: {
         errors
