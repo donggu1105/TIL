@@ -55,6 +55,24 @@ model User {
   userType UserType @default(User)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  favoriteIds String[]
+  products Product[]
+}
+
+model Product {
+  id            String    @id @default(cuid())
+  title          String
+  description String
+  imageSrc String
+  category String
+  userId String
+  price Int
+  latitude Float
+  longtitude Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model VerificationToken {

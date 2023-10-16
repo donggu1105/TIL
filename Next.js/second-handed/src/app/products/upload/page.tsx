@@ -1,7 +1,11 @@
 'use client';
+import Container from '@/components/Container';
 import Input from '@/components/Input'
 import {useState} from "react";
-import {FieldValues, useForm} from "react-hook-form";
+import {FieldValues, SubmitHandler, useForm} from "react-hook-form";
+import {Button} from "@/components/Button";
+import Heading from '@/components/Heading';
+import ImageUpload from "@/components/ImageUpload";
 
 const ProductUploadPage = () => {
 
@@ -28,9 +32,29 @@ const ProductUploadPage = () => {
         }
     )
 
+    const imageSrc = watch('imageSrc')
+
+    const onSubmit: SubmitHandler<FieldValues> = (data) => {
+
+
+    }
+
+    const setCustomValue = (id: string, value: any) => {
+        setValue(id, value);
+    }
+
 
     return (
-        <div>
+        <Container>
+        <div className='
+            max-w-screen-lg mx-auto
+        '>
+            <form className='flex flex-col gap-8' onSubmit={handleSubmit(onSubmit)}>
+
+                <Heading title="Product Upload" subtitle="upload your product"/>
+
+                <ImageUpload value={imageSrc} onChange={(value) => setCustomValue('imageSrc', value)}></ImageUpload>
+
             <Input
                 id="title"
                 label="Title"
@@ -83,9 +107,13 @@ const ProductUploadPage = () => {
 
         {/*    kakao map */}
 
-            <
+                <Button label="상품 생성하기"></Button>
+
+            </form>
 
         </div>
+
+        </Container>
     );
 };
 
