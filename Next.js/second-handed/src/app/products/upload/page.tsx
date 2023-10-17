@@ -6,6 +6,12 @@ import {FieldValues, SubmitHandler, useForm} from "react-hook-form";
 import {Button} from "@/components/Button";
 import Heading from '@/components/Heading';
 import ImageUpload from "@/components/ImageUpload";
+import {categories} from "@/components/categories/Categories";
+import CategoryInput from "@/components/categories/CategoryInput";
+import KakaoMap from "@/components/KakaoMap";
+import dynamic from "next/dynamic";
+import axios from "axios";
+import {useRouter} from "next/navigation";
 
 const ProductUploadPage = () => {
 
@@ -32,10 +38,30 @@ const ProductUploadPage = () => {
         }
     )
 
+    const KakaoMap = dynamic(() => import('../../../components/KakaoMap'),{
+        ssr: false
+    })
+
     const imageSrc = watch('imageSrc')
+    const category = watch('category')
+    const latitude = watch('latitude')
+    const longitude = watch('longitude')
+    const router = useRouter();
 
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
+        setIsLoading(true);
 
+        axios.post('/api/products', data)
+            .then((response) => {
+                router.push(`/products/${response.data.id}`);
+                reset();
+            })
+            .catch((err) => {
+                console.error(err);
+            })
+            .finally(() => {
+                setIsLoading(false);
+            })
 
     }
 
@@ -100,12 +126,24 @@ const ProductUploadPage = () => {
                 overflow-auto
                 '
             >
-            {/* Category */}
+
+                {categories.map((item) => (
+                    <div key={item.label} className='col-span-1'>
+                        <CategoryInput onClick={(category) => setCustomValue('category', category)}
+                                       selected={category === item.path}
+                                       label={item.label}
+                                       icon={item.icon}
+                                       path={item.path}
+                        />
+
+                    </div>
+                ))}
+
             </div>
 
             <hr/>
 
-        {/*    kakao map */}
+            <KakaoMap setCustomValue={setCustomValue} latitude={latitude} longitude={longitude}/>
 
                 <Button label="상품 생성하기"></Button>
 

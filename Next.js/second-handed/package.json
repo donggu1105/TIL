@@ -34,7 +34,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.47.0",
     "react-icons": "^4.8.0",
-    "react-kakao-maps-sdk": "^1.1.8",
+    "react-kakao-maps-sdk": "^1.1.21",
     "react-leaflet": "^4.2.1",
     "react-loader-spinner": "^5.3.4",
     "react-toastify": "^9.1.2",
