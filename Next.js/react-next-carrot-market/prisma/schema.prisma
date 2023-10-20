@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -54,10 +54,10 @@ model User {
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
 
-  favoriteIds String[]
-  products    Product[]
-  comments    Comments[]
-  userType    UserType   @default(User)
+  // favoriteIds String[]
+  products Product[]
+  comments Comments[]
+  userType UserType   @default(User)
 
   conversations    Conversation[]
   sentMessages     Message[]      @relation("sender")
