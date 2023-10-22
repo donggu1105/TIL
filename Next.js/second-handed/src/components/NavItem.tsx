@@ -10,6 +10,15 @@ interface NavItemProps {
 }
 const NavItem = ({mobile, currentUser}: NavItemProps) => {
 
+    const handleSignIn = async () => {
+        try {
+            await signIn();
+        } catch (error) {
+            console.log("Error during sign-in:", error);
+        }
+    };
+
+
 
     return (
         <ul className={`text-md justify-center flex gap-4 w-full items-center ${mobile && "flex-col h-full"}`}>
@@ -20,11 +29,8 @@ const NavItem = ({mobile, currentUser}: NavItemProps) => {
                 ?
                 <li className="py-2 text-center border-b-4 cursor-pointer"><button onClick={() => signOut()}>SiginOut</button></li>
                 :
-                <li className="py-2 text-center border-b-4 cursor-pointer"><button onClick={() => signIn()}>SiginIn</button></li>
+                <li className="py-2 text-center border-b-4 cursor-pointer"><button onClick={handleSignIn}>SiginIn</button></li>
             }
-
-
-
         </ul>
     );
 };

@@ -22,16 +22,17 @@ export default async function RootLayout({
 
     const currentUser = await getCurrentUser();
 
-  return (
-    <html lang="en">
-      <body className={inter.className}>
+    console.log('currentUser', currentUser)
+    return (
+        <html lang="en">
+        <body className={inter.className}>
         <Navbar currentUser={currentUser}/>
         {children}
 
-        <Script  type="text/javascript"
-                 src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2ffaeacf6d3cc3827abb93dbe25a0659&libraries=services,clusterer&autoload=false" />
+        <Script type="text/javascript"
+                src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2ffaeacf6d3cc3827abb93dbe25a0659&libraries=services,clusterer&autoload=false"/>
 
-      </body>
-    </html>
-  )
+        </body>
+        </html>
+    );
 }

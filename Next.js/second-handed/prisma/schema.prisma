@@ -6,10 +6,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
-
 
 model Account {
   id                 String  @id @default(cuid())
@@ -55,7 +54,7 @@ model User {
   userType UserType @default(User)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  favoriteIds String[]
+  // favoriteIds String[]
   products Product[]
 }
 
