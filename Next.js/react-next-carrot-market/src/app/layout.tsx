@@ -4,6 +4,7 @@ import getCurrentUser from './actions/getCurrentUser';
 import Script from 'next/script';
 import ToastProvider from '@/components/ToastProvider';
 import SwrProvider from '@/providers/SwrProvider';
+import React from "react";
 
 export const metadata = {
   title: '중고마켓',

@@ -51,6 +51,8 @@ export default async function getProducts(
       ...(skip && { skip: Number(skip) }),
     });
 
+    console.log('products', products)
+
     const safeProducts = products.map((product) => ({
       ...product,
       createdAt: product.createdAt.toISOString(),

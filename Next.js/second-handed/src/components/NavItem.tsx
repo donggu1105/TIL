@@ -10,14 +10,6 @@ interface NavItemProps {
 }
 const NavItem = ({mobile, currentUser}: NavItemProps) => {
 
-    const handleSignIn = async () => {
-        try {
-            await signIn();
-        } catch (error) {
-            console.log("Error during sign-in:", error);
-        }
-    };
-
 
 
     return (
@@ -27,9 +19,9 @@ const NavItem = ({mobile, currentUser}: NavItemProps) => {
 
             {currentUser
                 ?
-                <li className="py-2 text-center border-b-4 cursor-pointer"><button onClick={() => signOut()}>SiginOut</button></li>
+                <li className="py-2 text-center border-b-4 cursor-pointer"><button onClick={() => signOut()}>SignOut</button></li>
                 :
-                <li className="py-2 text-center border-b-4 cursor-pointer"><button onClick={handleSignIn}>SiginIn</button></li>
+                <li className="py-2 text-center border-b-4 cursor-pointer"><button onClick={() => signIn()}>SignIn</button></li>
             }
         </ul>
     );

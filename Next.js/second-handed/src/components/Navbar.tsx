@@ -1,5 +1,4 @@
 'use client'
-
 import React, {useState} from 'react';
 import Link from "next/link";
 import NavItem from "@/components/NavItem";
@@ -15,9 +14,6 @@ interface NavbarProps {
 const Navbar = ({currentUser}: NavbarProps) => {
 
     const [menu, setMenu] = useState(false);
-
-
-
 
     const handleMenu = () => {
         setMenu(!menu)

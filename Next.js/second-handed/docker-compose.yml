@@ -1,16 +1,31 @@
-version: '3.0'
+version: '3.1'
 
 services:
-  db:
-    image: postgres:latest
-    restart: always
-    environment:
-      POSTGRES_USER: donggu
-      POSTGRES_PASSWORD: 2245
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
 
-volumes:
-  postgres_data:
+  mysql:
+    image: mysql:latest
+    container_name: my_mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: 2245
+      MYSQL_DATABASE: test
+      MYSQL_USER: donggu
+      MYSQL_PASSWORD: 2245
+    ports:
+      - "3306:3306"
+
+#version: '3.0'
+#
+#services:
+#  db:
+#    image: postgres:latest
+#    restart: always
+#    environment:
+#      POSTGRES_USER: donggu
+#      POSTGRES_PASSWORD: 2245
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
+#
+#volumes:
+#  postgres_data:
