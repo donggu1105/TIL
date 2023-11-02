@@ -4,7 +4,7 @@ import {FaArrowRight} from "react-icons/fa";
 
 const Support = () => {
     return (
-        <div name="support" className="w-full m-24">
+        <section name="support" className="w-full">
 
             <div className="w-full h-[700px] bg-slate-900/90 absolute">
                 <img className='object-cover w-full h-full mix-blend-overlay' src={supportImg} alt="/" />
@@ -50,7 +50,7 @@ const Support = () => {
                     </div>
 
             </div>
-        </div>
+        </section>
     );
 };
 
