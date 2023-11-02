@@ -7,6 +7,7 @@ import Support from "./components/Support";
 import Feedback from "./components/Feedback";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
+import Feature from "./components/Feature";
 
 function App() {
   return (
@@ -15,8 +16,8 @@ function App() {
           <Home/>
           <About/>
           <Support/>
+          <Feature/>
           <Feedback/>
-          <Footer/>
           <Contact/>
           <Footer/>
       </>
