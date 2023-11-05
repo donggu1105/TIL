@@ -5,7 +5,7 @@ const Feedback = () => {
     const avatar = "https://images.unsplash.com/photo-1491528323818-fdd1faba62cc"
 
     return (
-        <section id="testimonials" className='w-full my-24 text-white bg-slate-700'>
+        <section name="feedback" className='w-full my-24 text-white bg-slate-700'>
             <div className="max-w-6xl px-5 mx-auto mt-32 text-center py-12">
                 <h2 className="text-4xl font-bold text-center">
                     Testimonials

@@ -1,6 +1,6 @@
 import React from 'react';
 import {FaAlignJustify, FaTimes} from "react-icons/fa";
-
+import {Link} from 'react-scroll';
 const Navbar = () => {
 
     const [nav, setNav] = React.useState(false);
@@ -11,11 +11,11 @@ const Navbar = () => {
                     <h1 className="mr-4 text-3xl font-bold sm:text-4xl">Chatty</h1>
 
                 <ul className="hidden md:flex">
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Support</li>
-                    <li>Feature</li>
-                    <li>Feedback</li>
+                    <li className="cursor-pointer"><Link to="home" smooth={true} duration={500}>Home</Link></li>
+                    <li className="cursor-pointer"><Link to="about" smooth={true} duration={500}>About</Link></li>
+                    <li className="cursor-pointer"><Link to="support" smooth={true} duration={500}>Support</Link></li>
+                    <li className="cursor-pointer"><Link to="feature" smooth={true} duration={500}>Feature</Link></li>
+                    <li className="cursor-pointer"><Link to="feedback" smooth={true} duration={500}>Feedback</Link></li>
                 </ul>
             </div>
             <div className="hidden pr-4 md:flex">
@@ -34,7 +34,7 @@ const Navbar = () => {
             </div>
 
                 <ul className={!nav ? "hidden" : "absolute bg-zinc-200 w-full px-8"}>
-                    <li className="w-full border-b-2 border-zinc-300">Home</li>
+                    <li className="w-full border-b-2 border-zinc-300"><Link to="home" smooth={true} duration={500}>Home</Link></li>
                     <li className="w-full border-b-2 border-zinc-300">About</li>
                     <li className="w-full border-b-2 border-zinc-300">Support</li>
                     <li className="w-full border-b-2 border-zinc-300">Feature</li>
