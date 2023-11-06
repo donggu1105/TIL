@@ -1,11 +1,9 @@
-import React from 'react';
+export const themeLight = {
+    text: '#363537',
+    background: '#363537',
+}
 
-const Theme = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-};
-
-export default Theme;
+export const themeDark = {
+    text: '#FAFAFA',
+    background: '#999',
+}

@@ -1,16 +1,23 @@
-import React from 'react';
-import {BrowserRouter, Outlet, Route, Routes} from "react-router-dom";
-import SearchPage from "./pages/SearchPage";
-import BookDetailPage from "./pages/BookDetailPage";
-import {Global} from "@emotion/react";
+/** @jsxImportSource @emotion/react */
 
-const Layout = () => {
+import { css, Global, ThemeProvider, useTheme } from '@emotion/react';
+import { useState } from 'react';
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
+import Footer from './components/Footer';
+import { themeDark, themeLight } from './components/Theme';
+import BookDetailPage from './pages/BookDetailPage';
+import SearchPage from './pages/SearchPage';
+
+const Layout = ({isDark, setIsDark}) => {
+
+    const theme = useTheme();
+    console.log(theme);
     return (
         <div>
             <Global styles={css`
             body {
-              background-color: white;
-              color: #333;
+              background-color: ${theme.background};
+              color: ${theme.text};
               transition-duration: 0.2s;
               transition-property: background-color, color;
             }
@@ -24,24 +31,34 @@ const Layout = () => {
                 padding: 0;
               }
             `} />
-
+            <div css={css`
+            min-height: 90vh;
+            `}>
           <Outlet />
+
+            </div>
+            <Footer isDark={isDark} setIsDark={setIsDark} />
         </div>
     );
 }
 
 
 const App = () => {
+
+    const [isDark, setIsDark] = useState(false)
     return (
         <BrowserRouter>
+
+            <ThemeProvider theme={isDark ? themeDark : themeLight}>
           <Routes>
-            <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Layout isDark={isDark} setIsDark={setIsDark} />}>
               <Route index element={<SearchPage />} />
               <Route path="/book/:bookId" element={<BookDetailPage />} />
 
             </Route>
 
           </Routes>
+            </ThemeProvider>
 
 
         </BrowserRouter>
