@@ -1,10 +1,19 @@
+/** @jsxImportSource @emotion/react */
+import {css} from '@emotion/react';
 import React from 'react';
 
-const Loader = () => {
+const Loader = ({loading, children}) => {
     return (
-        <div>
-            
-        </div>
+        <>
+            {loading ? <div css={css`
+            color: #ffffff;
+          text-align: center;
+              padding: 20px;
+            `}
+            >
+                {children}
+            </div> : null}
+        </>
     );
 };
 
