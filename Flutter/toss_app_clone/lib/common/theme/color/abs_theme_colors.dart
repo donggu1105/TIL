@@ -8,19 +8,17 @@ typedef ColorProvider = Color Function();
 abstract class AbstractThemeColors {
   const AbstractThemeColors();
 
-  Color get seedColor => const Color(0xff26ff8c);
-
   Color get veryBrightGrey => AppColors.brightGrey;
 
   Color get drawerBg => const Color.fromARGB(255, 255, 255, 255);
 
   Color get scrollableItem => const Color.fromARGB(255, 57, 57, 57);
 
-  Color get iconButton => const Color.fromARGB(255, 0, 0, 0);
+  Color get iconButton => const Color.fromARGB(255, 255, 255, 255);
 
-  Color get iconButtonInactivate => const Color.fromARGB(255, 162, 162, 162);
+  Color get iconButtonInactivate => const Color.fromARGB(255, 113, 113, 113);
 
-  Color get inActivate => const Color.fromARGB(255, 200, 207, 220);
+  Color get inActivate => const Color.fromARGB(255, 79, 79, 79);
 
   Color get activate => const Color.fromARGB(255, 63, 72, 95);
 
@@ -30,9 +28,9 @@ abstract class AbstractThemeColors {
 
   Color get badgeBorder => Colors.transparent;
 
-  Color get divider => const Color.fromARGB(255, 228, 228, 228);
+  Color get divider => const Color.fromARGB(255, 80, 80, 80);
 
-  Color get text => AppColors.darkGrey;
+  Color get text => Colors.white;
 
   Color get hintText => AppColors.middleGrey;
 
@@ -53,11 +51,14 @@ abstract class AbstractThemeColors {
   Color get roundedLayoutBackground => const Color.fromARGB(255, 24, 24, 24);
 
   Color get unreadColor => const Color.fromARGB(255, 48, 48, 48);
-  Color get lessImportantText => AppColors.grey;
+
   Color get lessImportant => AppColors.grey;
 
   Color get blueText => AppColors.blue;
 
-  Color? get plus => const Color.fromARGB(255, 230, 71, 03);
+  Color get dimmedText => const Color.fromARGB(255, 171, 171, 171);
 
+  Color get plus => const Color.fromARGB(255, 230, 71, 83);
+
+  Color get minus => const Color.fromARGB(255, 57, 127, 228);
 }
