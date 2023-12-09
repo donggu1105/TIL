@@ -28,7 +28,7 @@ class HomeFragment extends StatelessWidget {
           RefreshIndicator(
             edgeOffset: TossAppBar.appBarHeight,
             onRefresh: () async {
-              await sleepAsync(500.ms);
+              // await sleepAsync(500.ms);
             },
             child: SingleChildScrollView(
               padding: const EdgeInsets.only(top: TossAppBar.appBarHeight, bottom: MainScreenState.bottomNavigatorHeight),

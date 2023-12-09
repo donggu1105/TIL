@@ -1,5 +1,4 @@
 import 'package:after_layout/after_layout.dart';
-import 'package:fast_app_base/common/cli_common.dart';
 import 'package:fast_app_base/screen/main/tab/tab_item.dart';
 import 'package:fast_app_base/screen/main/tab/tab_navigator.dart';
 import 'package:flutter/material.dart';
@@ -15,28 +14,32 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => MainScreenState();
 }
 
-class MainScreenState extends State<MainScreen> with SingleTickerProviderStateMixin, AfterLayoutMixin {
+class MainScreenState extends State<MainScreen>
+    with SingleTickerProviderStateMixin, AfterLayoutMixin {
   TabItem _currentTab = TabItem.home;
-
-  final tabs = [TabItem.home, TabItem.benefit, TabItem.tosspay, TabItem.stock, TabItem.all];
+  final tabs = [
+    TabItem.home,
+    TabItem.benefit,
+    TabItem.tosspay,
+    TabItem.stock,
+    TabItem.all,
+  ];
   final List<GlobalKey<NavigatorState>> navigatorKeys = [];
 
   int get _currentIndex => tabs.indexOf(_currentTab);
 
   GlobalKey<NavigatorState> get _currentTabNavigationKey => navigatorKeys[_currentIndex];
 
+  ///bottomNavigationBar 아래 영역 까지 그림
   bool get extendBody => true;
 
   static double get bottomNavigationBarBorderRadius => 30.0;
 
-  static const double bottomNavigatorHeight = 60;
-
+  static const double bottomNavigatorHeight = 50;
 
   @override
-  FutureOr<void> afterFirstLayout(BuildContext context) {
-    delay((){
-      FlutterNativeSplash.remove();
-    }, 1500.ms);
+  FutureOr<void> afterFirstLayout(BuildContext context) async {
+    FlutterNativeSplash.remove();
   }
 
   @override
@@ -50,10 +53,9 @@ class MainScreenState extends State<MainScreen> with SingleTickerProviderStateMi
     return WillPopScope(
       onWillPop: _handleBackPressed,
       child: Scaffold(
-        extendBody: extendBody, //bottomNavigationBar 아래 영역 까지 그림
+        extendBody: extendBody,
         drawer: const MenuDrawer(),
-        body: Container(
-          color: context.appColors.veryBrightGrey,
+        body: Padding(
           padding: EdgeInsets.only(bottom: extendBody ? 60 - bottomNavigationBarBorderRadius : 0),
           child: SafeArea(
             bottom: !extendBody,
@@ -168,6 +170,4 @@ class MainScreenState extends State<MainScreen> with SingleTickerProviderStateMi
       navigatorKeys.add(GlobalKey<NavigatorState>());
     }
   }
-
-
 }

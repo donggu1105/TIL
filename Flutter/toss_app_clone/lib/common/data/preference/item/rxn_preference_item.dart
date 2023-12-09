@@ -1,5 +1,3 @@
-import 'package:fast_app_base/common/data/preference/item/nullable_preference_item.dart';
-
 import '../app_preferences.dart';
 
 class RxnPreferenceItem<T, R extends Rxn<T>> extends NullablePreferenceItem<T> {
@@ -41,6 +39,7 @@ class RxnPreferenceItem<T, R extends Rxn<T>> extends NullablePreferenceItem<T> {
 
   @override
   Future<bool> delete() {
+    _rxnValue.value = null;
     return AppPreferences.deleteValue<T?>(this);
   }
 

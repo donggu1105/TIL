@@ -91,7 +91,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
           _MenuWidget(
             'opensource'.tr(),
             onTap: () async {
-              Nav.push(const OpensourceScreen());
+              // Nav.push(const OpensourceScreen());
             },
           ),
           const Line(),

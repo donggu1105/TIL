@@ -11,11 +11,12 @@ enum RoundButtonTheme {
     this.bgColor,
     this.textColor,
     this.borderColor, {
+    this.shadowColor = Colors.transparent,
     this.backgroundColorProvider,
-  }) : shadowColor = Colors.transparent;
+  });
 
-  ///RoundButtonTheme 안에서 Custome Theme 분기가 필요하다면 이렇게 함수로 사용
-  final Color Function(BuildContext context)? backgroundColorProvider;
+  final Color Function(BuildContext context)?
+      backgroundColorProvider; //RoundButtonTheme 안에서 Custome Theme 분기가 필요하다면 이렇게 함수로 사용
   final Color bgColor;
   final Color textColor;
   final Color borderColor;

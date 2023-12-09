@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../app.dart';
 import '../data/preference/prefs.dart';
 import 'custom_theme.dart';
 import 'custom_theme_holder.dart';
@@ -17,7 +16,8 @@ class CustomThemeApp extends StatefulWidget {
 
 class _CustomThemeAppState extends State<CustomThemeApp> {
   late CustomTheme theme = savedTheme ?? defaultTheme ?? systemTheme;
-  final CustomTheme? defaultTheme = App.defaultTheme;
+  final CustomTheme? defaultTheme =
+      CustomTheme.dark; //light, dark 테마가 준비되었고, 시스템 테마를 따라가게 하려면 해당 필드를 제거 하시면 됩니다.
 
   void handleChangeTheme(CustomTheme theme) {
     setState(() => this.theme = theme);
