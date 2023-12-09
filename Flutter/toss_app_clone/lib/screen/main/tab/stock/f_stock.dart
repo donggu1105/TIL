@@ -1,5 +1,6 @@
 import 'package:fast_app_base/common/common.dart';
 import 'package:fast_app_base/common/widget/w_image_button.dart';
+import 'package:fast_app_base/screen/main/tab/stock/search/f_search_stock.dart';
 // import 'package:fast_app_base/screen/main/tab/stock/search/s_stock_search.dart';
 import 'package:fast_app_base/screen/main/tab/stock/tab/f_my_stock.dart';
 import 'package:fast_app_base/screen/main/tab/stock/tab/f_today_discovery.dart';
@@ -30,7 +31,7 @@ class _StockFragmentState extends State<StockFragment> with SingleTickerProvider
             ImageButton(
               imagePath: '$basePath/icon/stock_search.png',
               onTap: () {
-                // Nav.push(const StockSearchScreen());
+                Nav.push(const SearchStockFragment());
               },
             ),
             ImageButton(

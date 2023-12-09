@@ -22,7 +22,7 @@ class ImageButton extends StatelessWidget {
       padding: padding,
       child: Tap(
         onTap: () {
-          context.showSnackbar("검색");
+          onTap();
         },
         child: Image.asset(imagePath, width: width, height: height,),
       ),

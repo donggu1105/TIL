@@ -1,7 +1,7 @@
-class Benefit {
+class Benefit{
   final String imagePath;
   final String title;
   final String subTitle;
 
-  const Benefit(this.imagePath, this.title, this.subTitle);
+  Benefit(this.imagePath, this.title, this.subTitle);
 }
