@@ -25,7 +25,16 @@ class SearchStockData extends GetxController  {
   }
 
   void search(String keyword) {
+    if (keyword.isEmpty) {
+      autoCompleteList.clear();
+      return;
+    }
+
     autoCompleteList.value = stocks.where((element) => element.name.contains(keyword)).toList();
+    debugPrint("=========");
+    debugPrint('keyword : $keyword');
     debugPrint('autoCompleteList : ${autoCompleteList.value}');
+    debugPrint("=========");
+
   }
 }
